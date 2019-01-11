@@ -1,0 +1,3 @@
+[submodule "OpenAPI-Swift-Promises"]
+	path = OpenAPI-Swift-Promises
+	url = https://github.com/KKBOX/OpenAPI-Swift-Promises
