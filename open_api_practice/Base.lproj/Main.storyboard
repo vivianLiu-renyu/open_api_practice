@@ -58,7 +58,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="Tlm-0B-uCr" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="topMargin" constant="25" id="1Yi-39-Wcs"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="v1h-lp-NkJ" secondAttribute="bottom" constant="15" id="2qF-k3-joJ"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Xk7-vt-Hbq" secondAttribute="bottom" constant="4" id="Bay-OZ-YKA"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="fio-yj-nGY" secondAttribute="trailing" constant="4" id="Dls-3c-wrF"/>
@@ -68,6 +67,7 @@
                                         <constraint firstItem="v1h-lp-NkJ" firstAttribute="leading" secondItem="Xk7-vt-Hbq" secondAttribute="trailing" constant="15" id="Uwc-wD-O5X"/>
                                         <constraint firstItem="Xk7-vt-Hbq" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="topMargin" constant="4" id="hBN-YS-Syl"/>
                                         <constraint firstItem="Tlm-0B-uCr" firstAttribute="leading" secondItem="Xk7-vt-Hbq" secondAttribute="trailing" constant="15" id="s8L-47-QMm"/>
+                                        <constraint firstItem="Tlm-0B-uCr" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="topMargin" constant="25" id="sVb-58-8h5"/>
                                         <constraint firstItem="fio-yj-nGY" firstAttribute="leading" secondItem="v1h-lp-NkJ" secondAttribute="trailing" constant="15" id="znq-My-d3z"/>
                                     </constraints>
                                 </tableViewCellContentView>
