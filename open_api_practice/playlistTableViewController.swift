@@ -9,13 +9,13 @@ class playlistTableViewController: UITableViewController {
     }
     
     var playlistsList: [playlistData] = [
-        playlistData(playlistName: "Yayaya", curatorName: "Stooooopid"),
-        playlistData(playlistName: "Yolo", curatorName: "Lol"),
-        playlistData(playlistName: "Just A Deam", curatorName: "Neyo"),
-        playlistData(playlistName: "BATS", curatorName: "Jikook"),
-        playlistData(playlistName: "Whatsoever I don't actually care, yeahhhhhhhhhh", curatorName: "I don't care anymore!!!"),
-        playlistData(playlistName: "Everything Is Awesome", curatorName: "Lego"),
-        playlistData(playlistName: "Age Of Empire", curatorName: "Nanohard")
+        playlistData(playlistName: "Yayaya", curatorName: "Stooooopid", playlistImageUrl: "https://i.kfs.io/playlist/global/26541395v33/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94562966v27/cropresize/300x300.jpg"),
+        playlistData(playlistName: "Yolo", curatorName: "Lol", playlistImageUrl: "https://i.kfs.io/playlist/global/26541409v110/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563062v1/cropresize/300x300.jpg"),
+        playlistData(playlistName: "Just A Deam", curatorName: "Neyo", playlistImageUrl: "https://i.kfs.io/playlist/global/26541410v96/cropresize/1000x1000.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563302v1/cropresize/300x300.jpg"),
+        playlistData(playlistName: "BATS", curatorName: "Jikook", playlistImageUrl: "https://i.kfs.io/playlist/global/26541412v100/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563350v1/cropresize/300x300.jpg"),
+        playlistData(playlistName: "Whatsoever I don't actually care, yeahhhhhhhhhh", curatorName: "I don't care anymore!!!", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg"),
+        playlistData(playlistName: "Everything Is Awesome", curatorName: "Lego", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg"),
+        playlistData(playlistName: "Age Of Empire", curatorName: "Nanohard", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg")
     ]
     
     // MARK: - Table view data source
@@ -36,10 +36,38 @@ class playlistTableViewController: UITableViewController {
 
         cell.playlistName.text = playlistsList[indexPath.row].playlistName
         cell.curatorName.text = playlistsList[indexPath.row].curatorName
-        cell.playlistImage.image = UIImage(named: "heart.png")
+        let playlistImageAddress = playlistsList[indexPath.row].playlistImageUrl
+        if let imageUrl = URL(string: playlistImageAddress) {
+            DispatchQueue.global().async {
+                do{
+                    let imageData = try Data(contentsOf: imageUrl)
+                    let downloadedImage = UIImage(data: imageData)
+                    DispatchQueue.main.async {
+                        cell.playlistImage.image = downloadedImage
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
         cell.playlistImage.layer.cornerRadius = 5
         cell.playlistImage.clipsToBounds = true
-        cell.curatorImage.image = UIImage(named: "SJ.jpg")
+        
+        let curatorImageAddress = playlistsList[indexPath.row].curatorImageUrl
+        if let imageUrl = URL(string: curatorImageAddress) {
+            DispatchQueue.global().async {
+                do{
+                    let imageData = try Data(contentsOf: imageUrl)
+                    let downloadedImage = UIImage(data: imageData)
+                    DispatchQueue.main.async {
+                        cell.curatorImage.image = downloadedImage
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
         cell.curatorImage.layer.cornerRadius = cell.curatorImage.frame.height/2
         cell.curatorImage.clipsToBounds = true
 
