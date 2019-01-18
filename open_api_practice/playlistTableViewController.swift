@@ -1,30 +1,21 @@
-//
-//  playlistTableViewController.swift
-//  open_api_practice
-//
-//  Created by YenChen Huang on 2019/1/11.
-//  Copyright © 2019年 Search_Question_Avengers. All rights reserved.
-//
-
 import UIKit
 
 class playlistTableViewController: UITableViewController {
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Uncomment the following line to preserve selection between presentations
-//        // self.clearsSelectionOnViewWillAppear = false
-//
-//        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.view.backgroundColor = UIColor.black
+    }
     
     var playlistsList: [playlistData] = [
         playlistData(playlistName: "Yayaya", curatorName: "Stooooopid"),
         playlistData(playlistName: "Yolo", curatorName: "Lol"),
         playlistData(playlistName: "Just A Deam", curatorName: "Neyo"),
-        playlistData(playlistName: "BTS", curatorName: "Jikook")
+        playlistData(playlistName: "BATS", curatorName: "Jikook"),
+        playlistData(playlistName: "Whatsoever I don't actually care, yeahhhhhhhhhh", curatorName: "I don't care anymore!!!"),
+        playlistData(playlistName: "Everything Is Awesome", curatorName: "Lego"),
+        playlistData(playlistName: "Age Of Empire", curatorName: "Nanohard")
     ]
     
     // MARK: - Table view data source
@@ -45,9 +36,12 @@ class playlistTableViewController: UITableViewController {
 
         cell.playlistName.text = playlistsList[indexPath.row].playlistName
         cell.curatorName.text = playlistsList[indexPath.row].curatorName
-        
-        print(cell.playlistName.text)
-        print(cell.curatorName.text)
+        cell.playlistImage.image = UIImage(named: "heart.png")
+        cell.playlistImage.layer.cornerRadius = 5
+        cell.playlistImage.clipsToBounds = true
+        cell.curatorImage.image = UIImage(named: "SJ.jpg")
+        cell.curatorImage.layer.cornerRadius = cell.curatorImage.frame.height/2
+        cell.curatorImage.clipsToBounds = true
 
         return cell
     }

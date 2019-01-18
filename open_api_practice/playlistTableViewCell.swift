@@ -1,17 +1,11 @@
-//
-//  playlistTableViewCell.swift
-//  open_api_practice
-//
-//  Created by YenChen Huang on 2019/1/11.
-//  Copyright © 2019年 Search_Question_Avengers. All rights reserved.
-//
-
 import UIKit
 
 class playlistTableViewCell: UITableViewCell {
 
     @IBOutlet weak var playlistName: UILabel!
     @IBOutlet weak var curatorName: UILabel!
+    @IBOutlet weak var playlistImage: UIImageView!
+    @IBOutlet weak var curatorImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
