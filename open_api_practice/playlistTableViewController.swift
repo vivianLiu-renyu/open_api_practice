@@ -1,11 +1,3 @@
-//
-//  playlistTableViewController.swift
-//  open_api_practice
-//
-//  Created by YenChen Huang on 2019/1/11.
-//  Copyright © 2019年 Search_Question_Avengers. All rights reserved.
-//
-
 import UIKit
 
 class playlistTableViewController: UITableViewController {
@@ -45,9 +37,12 @@ class playlistTableViewController: UITableViewController {
 
         cell.playlistName.text = playlistsList[indexPath.row].playlistName
         cell.curatorName.text = playlistsList[indexPath.row].curatorName
-        
-        print(cell.playlistName.text)
-        print(cell.curatorName.text)
+        cell.playlistImage.image = UIImage(named: "heart.png")
+        cell.playlistImage.layer.cornerRadius = 5
+        cell.playlistImage.clipsToBounds = true
+        cell.curatorImage.image = UIImage(named: "SJ.jpg")
+        cell.curatorImage.layer.cornerRadius = cell.curatorImage.frame.height/2
+        cell.curatorImage.clipsToBounds = true
 
         return cell
     }
