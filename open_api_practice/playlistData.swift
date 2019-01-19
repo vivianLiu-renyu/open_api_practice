@@ -6,11 +6,27 @@ class PlaylistsAPIData {
 }
 class PlaylistData {
     var playlistName = ""
-    var playlistImage = ""
+    var playlistImageUrl = ""
     var playlistURL = ""
     var curatorName = ""
-    var curatorImage = ""
+    var curatorImageUrl = ""
     var curatorURL = ""
+    
+    init() {
+        playlistName = ""
+        playlistImageUrl = ""
+        playlistURL = ""
+        curatorName = ""
+        curatorImageUrl = ""
+        curatorURL = ""
+    }
+    
+    init(playlistName: String, curatorName: String, playlistImageUrl: String, curatorImageUrl: String ) {
+        self.playlistName = playlistName
+        self.playlistImageUrl = playlistImageUrl
+        self.curatorName = curatorName
+        self.curatorImageUrl = curatorImageUrl
+    }
 }
 
 func getPlaylists(territory: Territory) -> [String: Any] {
