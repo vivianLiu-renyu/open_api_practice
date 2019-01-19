@@ -10,8 +10,10 @@
 		05274C0437665B233AE566ED /* Pods_open_api_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4C1FB9976DF19E8C5FDE15 /* Pods_open_api_practice.framework */; };
 		27B046BF64A25629032BA22A /* Pods_open_api_practiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125220680522546FBD32E9B7 /* Pods_open_api_practiceUITests.framework */; };
 		C87C500621F1750C00949394 /* playlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500321F1750C00949394 /* playlistTableViewCell.swift */; };
-		C87C500721F1750C00949394 /* playlistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500421F1750C00949394 /* playlistData.swift */; };
+		C87C500721F1750C00949394 /* PlaylistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500421F1750C00949394 /* PlaylistData.swift */; };
 		C87C500821F1750C00949394 /* playlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500521F1750C00949394 /* playlistTableViewController.swift */; };
+		C87C500A21F1C1C400949394 /* GetPlaylistsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500921F1C1C400949394 /* GetPlaylistsData.swift */; };
+		C87C500C21F2041200949394 /* DataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500B21F2041200949394 /* DataAPI.swift */; };
 		C8B7DE0121DF0C480037240A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7DE0021DF0C480037240A /* AppDelegate.swift */; };
 		C8B7DE0321DF0C480037240A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7DE0221DF0C480037240A /* ViewController.swift */; };
 		C8B7DE0621DF0C480037240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B7DE0421DF0C480037240A /* Main.storyboard */; };
@@ -38,8 +40,10 @@
 		91604A68EC287DDD95DEAF78 /* Pods-open_api_practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practice.release.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practice/Pods-open_api_practice.release.xcconfig"; sourceTree = "<group>"; };
 		98CDB0A569FBFFE8F66C08D6 /* Pods-open_api_practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practice/Pods-open_api_practice.debug.xcconfig"; sourceTree = "<group>"; };
 		C87C500321F1750C00949394 /* playlistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playlistTableViewCell.swift; sourceTree = "<group>"; };
-		C87C500421F1750C00949394 /* playlistData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playlistData.swift; sourceTree = "<group>"; };
+		C87C500421F1750C00949394 /* PlaylistData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistData.swift; sourceTree = "<group>"; };
 		C87C500521F1750C00949394 /* playlistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playlistTableViewController.swift; sourceTree = "<group>"; };
+		C87C500921F1C1C400949394 /* GetPlaylistsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaylistsData.swift; sourceTree = "<group>"; };
+		C87C500B21F2041200949394 /* DataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAPI.swift; sourceTree = "<group>"; };
 		C8B7DDFD21DF0C480037240A /* open_api_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = open_api_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B7DE0021DF0C480037240A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8B7DE0221DF0C480037240A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +119,7 @@
 		C8B7DDFF21DF0C480037240A /* open_api_practice */ = {
 			isa = PBXGroup;
 			children = (
-				C87C500421F1750C00949394 /* playlistData.swift */,
+				C87C500421F1750C00949394 /* PlaylistData.swift */,
 				C87C500321F1750C00949394 /* playlistTableViewCell.swift */,
 				C87C500521F1750C00949394 /* playlistTableViewController.swift */,
 				C8B7DE0021DF0C480037240A /* AppDelegate.swift */,
@@ -124,6 +128,8 @@
 				C8B7DE0721DF0C490037240A /* Assets.xcassets */,
 				C8B7DE0921DF0C490037240A /* LaunchScreen.storyboard */,
 				C8B7DE0C21DF0C490037240A /* Info.plist */,
+				C87C500921F1C1C400949394 /* GetPlaylistsData.swift */,
+				C87C500B21F2041200949394 /* DataAPI.swift */,
 			);
 			path = open_api_practice;
 			sourceTree = "<group>";
@@ -244,10 +250,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-open_api_practice/Pods-open_api_practice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KKBOXOpenAPISwift/KKBOXOpenAPISwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KKBOXOpenAPISwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,11 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87C500A21F1C1C400949394 /* GetPlaylistsData.swift in Sources */,
 				C8B7DE0321DF0C480037240A /* ViewController.swift in Sources */,
 				C87C500821F1750C00949394 /* playlistTableViewController.swift in Sources */,
-				C87C500721F1750C00949394 /* playlistData.swift in Sources */,
+				C87C500721F1750C00949394 /* PlaylistData.swift in Sources */,
 				C8B7DE0121DF0C480037240A /* AppDelegate.swift in Sources */,
 				C87C500621F1750C00949394 /* playlistTableViewCell.swift in Sources */,
+				C87C500C21F2041200949394 /* DataAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

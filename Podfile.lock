@@ -1,16 +1,20 @@
 PODS:
+  - Alamofire (4.7.3)
   - KKBOXOpenAPISwift (1.1.3)
 
 DEPENDENCIES:
+  - Alamofire
   - KKBOXOpenAPISwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - KKBOXOpenAPISwift
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   KKBOXOpenAPISwift: f367d87f0ce3108439c391d3b9ec0a26aafc05b0
 
-PODFILE CHECKSUM: 6b42b75399b16661072747008009c812222ba48e
+PODFILE CHECKSUM: 2165e76f27ce7f4d336a79122c37d39dff0031d7
 
 COCOAPODS: 1.5.3

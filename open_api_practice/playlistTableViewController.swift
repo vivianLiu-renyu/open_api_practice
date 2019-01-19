@@ -7,25 +7,24 @@
 //
 
 import UIKit
+import KKBOXOpenAPISwift
+let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
 
 class playlistTableViewController: UITableViewController {
+    //let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
+    var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
+    var playlistData: [PlaylistData] = []
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Uncomment the following line to preserve selection between presentations
-//        // self.clearsSelectionOnViewWillAppear = false
-//
-//        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-//    }
-    
-    var playlistsList: [playlistData] = [
-        playlistData(playlistName: "Yayaya", curatorName: "Stooooopid"),
-        playlistData(playlistName: "Yolo", curatorName: "Lol"),
-        playlistData(playlistName: "Just A Deam", curatorName: "Neyo"),
-        playlistData(playlistName: "BTS", curatorName: "Jikook")
-    ]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        playlistsList = GetPlaylistsData.initPlaylistData(playlistsList)
+        if let playlistData = playlistsList.playlistArray {
+            self.playlistData = playlistData
+        }
+        
+        print("Launch")
+    }
     
     // MARK: - Table view data source
 
@@ -35,22 +34,44 @@ class playlistTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playlistsList.count
+        return playlistData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playlist", for: indexPath) as! playlistTableViewCell
-        
-        print(cell)
-
-        cell.playlistName.text = playlistsList[indexPath.row].playlistName
-        cell.curatorName.text = playlistsList[indexPath.row].curatorName
-        
-        print(cell.playlistName.text)
-        print(cell.curatorName.text)
+        let playlistData = self.playlistData[indexPath.row]
+        cell.displayContent(with: playlistData)
 
         return cell
     }
+    
+//    private func getPlaylists(territory: KKTerritory) -> Self {
+//        _ = try? API.fetchNewHitsPlaylists(territory: territory, offset: 0, limit: 10) { result in
+//            print("Hi in fetchNewHitsPlaylists")
+//            switch result {
+//            case .error(let error):
+//                print(error);
+//            case .success(let playlist):
+//                print("Hi")
+//                print(playlist.playlists.count)
+//                for i in 0..<playlist.playlists.count {
+//                    self.setPlaylistsInfo(playlist: playlist.playlists[i])
+//                }
+//                //print(playlist.playlists[0])
+//                // Successfully logged-in
+//            }
+//        }
+//
+//        return self
+//    }
+    
+//    private func setPlaylistsInfo(playlist: KKPlaylistInfo) -> Self {
+//        let playlist = playlistData(playlistName: playlist.title, curatorName: playlist.owner.name)
+//        playlistsList.append(playlist)
+//        
+//        print(playlistsList)
+//        return self
+//    }
 
     /*
     // Override to support conditional editing of the table view.

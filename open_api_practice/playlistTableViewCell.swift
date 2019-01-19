@@ -23,5 +23,10 @@ class playlistTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func displayContent(with playlistData: PlaylistData) {
+        self.playlistName.text = playlistData.playlistName
+        self.curatorName.text = playlistData.curatorName
+    }
 
 }
