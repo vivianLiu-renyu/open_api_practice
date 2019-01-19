@@ -1,11 +1,3 @@
-//
-//  playlistTableViewController.swift
-//  open_api_practice
-//
-//  Created by YenChen Huang on 2019/1/11.
-//  Copyright © 2019年 Search_Question_Avengers. All rights reserved.
-//
-
 import UIKit
 import KKBOXOpenAPISwift
 let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
@@ -17,6 +9,7 @@ class playlistTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
         playlistsList = GetPlaylistsData.initPlaylistData(playlistsList)
         if let playlistData = playlistsList.playlistArray {
@@ -25,6 +18,21 @@ class playlistTableViewController: UITableViewController {
         
         print("Launch")
     }
+=======
+
+        self.view.backgroundColor = UIColor.black
+    }
+    
+    var playlistsList: [playlistData] = [
+        playlistData(playlistName: "Yayaya", curatorName: "Stooooopid", playlistImageUrl: "https://i.kfs.io/playlist/global/26541395v33/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94562966v27/cropresize/300x300.jpg"),
+        playlistData(playlistName: "Yolo", curatorName: "Lol", playlistImageUrl: "https://i.kfs.io/playlist/global/26541409v110/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563062v1/cropresize/300x300.jpg"),
+        playlistData(playlistName: "Just A Deam", curatorName: "Neyo", playlistImageUrl: "https://i.kfs.io/playlist/global/26541410v96/cropresize/1000x1000.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563302v1/cropresize/300x300.jpg"),
+        playlistData(playlistName: "BATS", curatorName: "Jikook", playlistImageUrl: "https://i.kfs.io/playlist/global/26541412v100/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563350v1/cropresize/300x300.jpg"),
+        playlistData(playlistName: "Whatsoever I don't actually care, yeahhhhhhhhhh", curatorName: "I don't care anymore!!!", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg"),
+        playlistData(playlistName: "Everything Is Awesome", curatorName: "Lego", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg"),
+        playlistData(playlistName: "Age Of Empire", curatorName: "Nanohard", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg")
+    ]
+>>>>>>> ec59f2e7206af5c9720cb9ae434713344d88bf51
     
     // MARK: - Table view data source
 
@@ -39,8 +47,50 @@ class playlistTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playlist", for: indexPath) as! playlistTableViewCell
+<<<<<<< HEAD
         let playlistData = self.playlistData[indexPath.row]
         cell.displayContent(with: playlistData)
+=======
+        
+        print(cell)
+
+        cell.playlistName.text = playlistsList[indexPath.row].playlistName
+        cell.curatorName.text = playlistsList[indexPath.row].curatorName
+        let playlistImageAddress = playlistsList[indexPath.row].playlistImageUrl
+        if let imageUrl = URL(string: playlistImageAddress) {
+            DispatchQueue.global().async {
+                do{
+                    let imageData = try Data(contentsOf: imageUrl)
+                    let downloadedImage = UIImage(data: imageData)
+                    DispatchQueue.main.async {
+                        cell.playlistImage.image = downloadedImage
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
+        cell.playlistImage.layer.cornerRadius = 5
+        cell.playlistImage.clipsToBounds = true
+        
+        let curatorImageAddress = playlistsList[indexPath.row].curatorImageUrl
+        if let imageUrl = URL(string: curatorImageAddress) {
+            DispatchQueue.global().async {
+                do{
+                    let imageData = try Data(contentsOf: imageUrl)
+                    let downloadedImage = UIImage(data: imageData)
+                    DispatchQueue.main.async {
+                        cell.curatorImage.image = downloadedImage
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        cell.curatorImage.layer.cornerRadius = cell.curatorImage.frame.height/2
+        cell.curatorImage.clipsToBounds = true
+>>>>>>> ec59f2e7206af5c9720cb9ae434713344d88bf51
 
         return cell
     }

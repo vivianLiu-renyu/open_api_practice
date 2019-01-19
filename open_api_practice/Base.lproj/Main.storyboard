@@ -13,42 +13,69 @@
         <scene sceneID="arF-Za-Jj7">
             <objects>
                 <tableViewController id="2FX-xS-KWi" customClass="playlistTableViewController" customModule="open_api_practice" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f0v-Pv-uJu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f0v-Pv-uJu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlist" rowHeight="72" id="Ak1-Qa-gb1" customClass="playlistTableViewCell" customModule="open_api_practice" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlist" rowHeight="165" id="Ak1-Qa-gb1" customClass="playlistTableViewCell" customModule="open_api_practice" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="165"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ak1-Qa-gb1" id="NB4-Ut-05c">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ak1-Qa-gb1" id="NB4-Ut-05c">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="164.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌單名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tlm-0B-uCr">
-                                            <rect key="frame" x="16" y="11" width="113.5" height="50"/>
+                                            <rect key="frame" x="178" y="36" width="177" height="33.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="編輯人名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fio-yj-nGY">
-                                            <rect key="frame" x="202" y="22" width="102" height="29"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playlist_default" translatesAutoresizingMaskIntoConstraints="NO" id="Xk7-vt-Hbq">
+                                            <rect key="frame" x="20" y="15" width="143" height="143"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="143" id="BdA-5q-XQc"/>
+                                                <constraint firstAttribute="height" constant="143" id="oFk-QV-8v5"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="curator_default" translatesAutoresizingMaskIntoConstraints="NO" id="v1h-lp-NkJ">
+                                            <rect key="frame" x="178" y="95" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="fXN-B3-gRT"/>
+                                                <constraint firstAttribute="width" constant="50" id="iUq-ZO-jCX"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="編輯人名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fio-yj-nGY">
+                                            <rect key="frame" x="243" y="117" width="112" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Tlm-0B-uCr" secondAttribute="bottom" id="39S-hy-LWo"/>
-                                        <constraint firstItem="fio-yj-nGY" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="topMargin" constant="11" id="C4v-JK-bSM"/>
-                                        <constraint firstItem="fio-yj-nGY" firstAttribute="leading" secondItem="Tlm-0B-uCr" secondAttribute="trailing" constant="72.5" id="O8A-0r-Ft0"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="fio-yj-nGY" secondAttribute="bottom" constant="10" id="a0R-HI-g07"/>
-                                        <constraint firstItem="Tlm-0B-uCr" firstAttribute="leading" secondItem="NB4-Ut-05c" secondAttribute="leadingMargin" id="gO7-rN-epo"/>
-                                        <constraint firstItem="Tlm-0B-uCr" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="topMargin" id="vBd-dq-32S"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="v1h-lp-NkJ" secondAttribute="bottom" constant="15" id="2qF-k3-joJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Xk7-vt-Hbq" secondAttribute="bottom" constant="4" id="Bay-OZ-YKA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fio-yj-nGY" secondAttribute="trailing" constant="4" id="Dls-3c-wrF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fio-yj-nGY" secondAttribute="bottom" constant="29" id="Qa1-PZ-wIY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Tlm-0B-uCr" secondAttribute="trailing" constant="4" id="SKT-ic-chQ"/>
+                                        <constraint firstItem="Xk7-vt-Hbq" firstAttribute="leading" secondItem="NB4-Ut-05c" secondAttribute="leadingMargin" constant="4" id="TfJ-yE-NjK"/>
+                                        <constraint firstItem="v1h-lp-NkJ" firstAttribute="leading" secondItem="Xk7-vt-Hbq" secondAttribute="trailing" constant="15" id="Uwc-wD-O5X"/>
+                                        <constraint firstItem="Xk7-vt-Hbq" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="topMargin" constant="4" id="hBN-YS-Syl"/>
+                                        <constraint firstItem="Tlm-0B-uCr" firstAttribute="leading" secondItem="Xk7-vt-Hbq" secondAttribute="trailing" constant="15" id="s8L-47-QMm"/>
+                                        <constraint firstItem="Tlm-0B-uCr" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="topMargin" constant="25" id="sVb-58-8h5"/>
+                                        <constraint firstItem="fio-yj-nGY" firstAttribute="leading" secondItem="v1h-lp-NkJ" secondAttribute="trailing" constant="15" id="znq-My-d3z"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.14304027329999999" green="0.14304027329999999" blue="0.14304027329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="curatorImage" destination="v1h-lp-NkJ" id="XNl-ej-Jhh"/>
                                     <outlet property="curatorName" destination="fio-yj-nGY" id="hMc-Un-83K"/>
+                                    <outlet property="playlistImage" destination="Xk7-vt-Hbq" id="Ngh-uw-bnE"/>
                                     <outlet property="playlistName" destination="Tlm-0B-uCr" id="ppX-nh-7aL"/>
                                 </connections>
                             </tableViewCell>
@@ -64,4 +91,8 @@
             <point key="canvasLocation" x="133.59999999999999" y="-565.36731634182911"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="curator_default" width="225" height="225"/>
+        <image name="playlist_default" width="225" height="225"/>
+    </resources>
 </document>
