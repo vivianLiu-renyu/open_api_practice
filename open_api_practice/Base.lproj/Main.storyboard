@@ -33,6 +33,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="playlist_name"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playlist_default" translatesAutoresizingMaskIntoConstraints="NO" id="Xk7-vt-Hbq">
                                             <rect key="frame" x="20" y="15" width="143" height="143"/>
@@ -40,6 +43,9 @@
                                                 <constraint firstAttribute="width" constant="143" id="BdA-5q-XQc"/>
                                                 <constraint firstAttribute="height" constant="143" id="oFk-QV-8v5"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="playlist_cover"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="curator_default" translatesAutoresizingMaskIntoConstraints="NO" id="v1h-lp-NkJ">
                                             <rect key="frame" x="178" y="95" width="50" height="50"/>
@@ -48,12 +54,18 @@
                                                 <constraint firstAttribute="width" constant="50" id="iUq-ZO-jCX"/>
                                             </constraints>
                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="curator_cover"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="編輯人名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fio-yj-nGY">
                                             <rect key="frame" x="243" y="117" width="112" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="curator_name"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,6 +84,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.14304027329999999" green="0.14304027329999999" blue="0.14304027329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new_hits_playlist"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="curatorImage" destination="v1h-lp-NkJ" id="XNl-ej-Jhh"/>
                                     <outlet property="curatorName" destination="fio-yj-nGY" id="hMc-Un-83K"/>
