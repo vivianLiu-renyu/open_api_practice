@@ -7,12 +7,29 @@ class playlistTableViewController: UITableViewController {
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
     
+    override func loadView() {
+        super.loadView()
+        
+        _ = try? API.fetchAccessTokenByClientCredential { result in
+            switch result {
+            case .error(let error): break
+            case .success(_):
+                print("AccessToken ")
+            }
+        }
+        DispatchQueue.global().async {
+            self.playlistsList = GetPlaylistsData.initPlaylistData(self.playlistsList)
+            DispatchQueue.main.async {
+                if let playlistDat = self.playlistsList.playlistArray {
+                    self.playlistData = playlistDat
+                }
+            }
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        playlistsList = GetPlaylistsData.initPlaylistData(playlistsList)
-//        if let playlistData = playlistsList.playlistArray {
-//            self.playlistData = playlistData
-//        }
         
         print("Launch")
 
@@ -37,83 +54,55 @@ class playlistTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playlistsLists.count
+        return playlistData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playlist", for: indexPath) as! playlistTableViewCell
-//        let playlistData = self.playlistData[indexPath.row]
-//        cell.displayContent(with: playlistData)
-//
-//        print(cell)
+        let playlistDat = self.playlistData[indexPath.row]
+        cell.displayContent(with: playlistDat)
 
-        cell.playlistName.text = playlistsLists[indexPath.row].playlistName
-        cell.curatorName.text = playlistsLists[indexPath.row].curatorName
-        let playlistImageAddress = playlistsLists[indexPath.row].playlistImageUrl
-        if let imageUrl = URL(string: playlistImageAddress) {
-            DispatchQueue.global().async {
-                do{
-                    let imageData = try Data(contentsOf: imageUrl)
-                    let downloadedImage = UIImage(data: imageData)
-                    DispatchQueue.main.async {
-                        cell.playlistImage.image = downloadedImage
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-        }
-        
-        cell.playlistImage.layer.cornerRadius = 5
-        cell.playlistImage.clipsToBounds = true
-        
-        let curatorImageAddress = playlistsLists[indexPath.row].curatorImageUrl
-        if let imageUrl = URL(string: curatorImageAddress) {
-            DispatchQueue.global().async {
-                do{
-                    let imageData = try Data(contentsOf: imageUrl)
-                    let downloadedImage = UIImage(data: imageData)
-                    DispatchQueue.main.async {
-                        cell.curatorImage.image = downloadedImage
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-        }
-        cell.curatorImage.layer.cornerRadius = cell.curatorImage.frame.height/2
-        cell.curatorImage.clipsToBounds = true
+        print("Cell", cell)
 
-        return cell
-    }
-    
-//    private func getPlaylists(territory: KKTerritory) -> Self {
-//        _ = try? API.fetchNewHitsPlaylists(territory: territory, offset: 0, limit: 10) { result in
-//            print("Hi in fetchNewHitsPlaylists")
-//            switch result {
-//            case .error(let error):
-//                print(error);
-//            case .success(let playlist):
-//                print("Hi")
-//                print(playlist.playlists.count)
-//                for i in 0..<playlist.playlists.count {
-//                    self.setPlaylistsInfo(playlist: playlist.playlists[i])
+//        cell.playlistName.text = playlistsLists[indexPath.row].playlistName
+//        cell.curatorName.text = playlistsLists[indexPath.row].curatorName
+//        let playlistImageAddress = playlistsLists[indexPath.row].playlistImageUrl
+//        if let imageUrl = URL(string: playlistImageAddress) {
+//            DispatchQueue.global().async {
+//                do{
+//                    let imageData = try Data(contentsOf: imageUrl)
+//                    let downloadedImage = UIImage(data: imageData)
+//                    DispatchQueue.main.async {
+//                        cell.playlistImage.image = downloadedImage
+//                    }
+//                } catch {
+//                    print(error.localizedDescription)
 //                }
-//                //print(playlist.playlists[0])
-//                // Successfully logged-in
 //            }
 //        }
 //
-//        return self
-//    }
-    
-//    private func setPlaylistsInfo(playlist: KKPlaylistInfo) -> Self {
-//        let playlist = playlistData(playlistName: playlist.title, curatorName: playlist.owner.name)
-//        playlistsList.append(playlist)
-//        
-//        print(playlistsList)
-//        return self
-//    }
+//        cell.playlistImage.layer.cornerRadius = 5
+//        cell.playlistImage.clipsToBounds = true
+//
+//        let curatorImageAddress = playlistsLists[indexPath.row].curatorImageUrl
+//        if let imageUrl = URL(string: curatorImageAddress) {
+//            DispatchQueue.global().async {
+//                do{
+//                    let imageData = try Data(contentsOf: imageUrl)
+//                    let downloadedImage = UIImage(data: imageData)
+//                    DispatchQueue.main.async {
+//                        cell.curatorImage.image = downloadedImage
+//                    }
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
+//            }
+//        }
+//        cell.curatorImage.layer.cornerRadius = cell.curatorImage.frame.height/2
+//        cell.curatorImage.clipsToBounds = true
+//
+        return cell
+    }
 
     /*
     // Override to support conditional editing of the table view.

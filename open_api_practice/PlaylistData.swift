@@ -29,19 +29,19 @@ class PlaylistData {
     }
 }
 
-func getPlaylists(territory: Territory) -> [String: Any] {
+func getPlaylists(territory: Territory) -> [KKPlaylistInfo] {
     let playlistInfo = DataAPI().getNewHitsPlaylist(territory: .taiwan)
 
     return playlistInfo
     //return ["a":"a"]
 }
 
-func setPlaylistsInfo(as info: NSDictionary) -> PlaylistData {
+func setPlaylistsInfo(as info: KKPlaylistInfo) -> PlaylistData {
     let playlistData = PlaylistData()
-    print(info)
-    playlistData.playlistName = info["title"] as? String ?? ""
-    let owner = info["owner"] as? NSDictionary ?? [:]
-    playlistData.curatorName = owner["name"] as? String ?? ""
+    print("Info:", info)
+    playlistData.playlistName = info.title
+    let owner = info.owner
+    playlistData.curatorName = owner.name
     
     return playlistData
 }
