@@ -10,7 +10,6 @@ class PlaylistData {
     var playlistURL = ""
     var curatorName = ""
     var curatorImageUrl = ""
-    var curatorURL = ""
     
     init() {
         playlistName = ""
@@ -18,10 +17,9 @@ class PlaylistData {
         playlistURL = ""
         curatorName = ""
         curatorImageUrl = ""
-        curatorURL = ""
     }
     
-    init(playlistName: String, curatorName: String, playlistImageUrl: String, curatorImageUrl: String ) {
+    init(playlistName: String, curatorName: String, playlistImageUrl: String, curatorImageUrl: String) {
         self.playlistName = playlistName
         self.playlistImageUrl = playlistImageUrl
         self.curatorName = curatorName
@@ -29,8 +27,8 @@ class PlaylistData {
     }
 }
 
-func getPlaylists(territory: Territory) -> [KKPlaylistInfo] {
-    let playlistInfo = DataAPI().getNewHitsPlaylist(territory: .taiwan)
+func getPlaylists(territory: KKTerritory) -> [KKPlaylistInfo] {
+    let playlistInfo = DataAPI().getNewHitsPlaylist(territory: territory)
 
     return playlistInfo
     //return ["a":"a"]
@@ -38,10 +36,13 @@ func getPlaylists(territory: Territory) -> [KKPlaylistInfo] {
 
 func setPlaylistsInfo(as info: KKPlaylistInfo) -> PlaylistData {
     let playlistData = PlaylistData()
-    print("Info:", info)
+
     playlistData.playlistName = info.title
+    playlistData.playlistImageUrl = ((info.images[2].url)?.absoluteString)!
+    
     let owner = info.owner
     playlistData.curatorName = owner.name
+    playlistData.curatorImageUrl = ((owner.images[2].url)?.absoluteString)!
     
     return playlistData
 }

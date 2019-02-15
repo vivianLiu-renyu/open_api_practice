@@ -1,30 +1,24 @@
 import Foundation
-
+import KKBOXOpenAPISwift
 class GetPlaylistsData: NSObject {
-    
     static func initPlaylistData(_ allPlaylists: PlaylistsAPIData) -> PlaylistsAPIData {
+        var playlistList: [KKTerritory:[KKPlaylistInfo]] = [:]
+        
         allPlaylists.playlistArray = []
 
+        playlistList[.taiwan] = getPlaylists(territory: .taiwan)
+        playlistList[.hongkong] = getPlaylists(territory: .hongkong)
+        playlistList[.japan] = getPlaylists(territory: .japan)
+        playlistList[.singapore] = getPlaylists(territory: .singapore)
+        playlistList[.malaysia] = getPlaylists(territory: .malaysia)
         
-        let playlistList = getPlaylists(territory: .taiwan)
-        
-        for i in 0..<playlistList.count {
-            allPlaylists.playlistArray?.append(setPlaylistsInfo(as: playlistList[i]))
+        for (territory, infos) in playlistList {
+            for info in infos {
+                allPlaylists.playlistArray?.append(setPlaylistsInfo(as: info))
+            }
         }
 
         print("print playlistList", playlistList)
         return allPlaylists
     }
 }
-
-//DispatchQueue.global().async {
-//                do{
-//                    let imageData = try Data(contentsOf: imageUrl)
-//                    let downloadedImage = UIImage(data: imageData)
-//                    DispatchQueue.main.async {
-//                        cell.playlistImage.image = downloadedImage
-//                    }
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            }

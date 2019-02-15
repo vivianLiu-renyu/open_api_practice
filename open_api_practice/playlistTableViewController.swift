@@ -7,8 +7,8 @@ class playlistTableViewController: UITableViewController {
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
     
-    override func loadView() {
-        super.loadView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         _ = try? API.fetchAccessTokenByClientCredential { result in
             switch result {
@@ -17,22 +17,17 @@ class playlistTableViewController: UITableViewController {
                 print("AccessToken ")
             }
         }
+        
         DispatchQueue.global().async {
             self.playlistsList = GetPlaylistsData.initPlaylistData(self.playlistsList)
             DispatchQueue.main.async {
                 if let playlistDat = self.playlistsList.playlistArray {
                     self.playlistData = playlistDat
+                    self.tableView.reloadData()
                 }
             }
         }
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        print("Launch")
-
         self.view.backgroundColor = UIColor.black
     }
     
@@ -64,43 +59,44 @@ class playlistTableViewController: UITableViewController {
 
         print("Cell", cell)
 
-//        cell.playlistName.text = playlistsLists[indexPath.row].playlistName
-//        cell.curatorName.text = playlistsLists[indexPath.row].curatorName
-//        let playlistImageAddress = playlistsLists[indexPath.row].playlistImageUrl
-//        if let imageUrl = URL(string: playlistImageAddress) {
-//            DispatchQueue.global().async {
-//                do{
-//                    let imageData = try Data(contentsOf: imageUrl)
-//                    let downloadedImage = UIImage(data: imageData)
-//                    DispatchQueue.main.async {
-//                        cell.playlistImage.image = downloadedImage
-//                    }
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-//
-//        cell.playlistImage.layer.cornerRadius = 5
-//        cell.playlistImage.clipsToBounds = true
-//
-//        let curatorImageAddress = playlistsLists[indexPath.row].curatorImageUrl
-//        if let imageUrl = URL(string: curatorImageAddress) {
-//            DispatchQueue.global().async {
-//                do{
-//                    let imageData = try Data(contentsOf: imageUrl)
-//                    let downloadedImage = UIImage(data: imageData)
-//                    DispatchQueue.main.async {
-//                        cell.curatorImage.image = downloadedImage
-//                    }
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-//        cell.curatorImage.layer.cornerRadius = cell.curatorImage.frame.height/2
-//        cell.curatorImage.clipsToBounds = true
-//
+        cell.playlistName.text = playlistData[indexPath.row].playlistName
+        cell.curatorName.text = playlistData[indexPath.row].curatorName
+        
+        let playlistImageAddress = playlistData[indexPath.row].playlistImageUrl
+        if let imageUrl = URL(string: playlistImageAddress) {
+            DispatchQueue.global().async {
+                do{
+                    let imageData = try Data(contentsOf: imageUrl)
+                    let downloadedImage = UIImage(data: imageData)
+                    DispatchQueue.main.async {
+                        cell.playlistImage.image = downloadedImage
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+
+        cell.playlistImage.layer.cornerRadius = 5
+        cell.playlistImage.clipsToBounds = true
+
+        let curatorImageAddress = playlistData[indexPath.row].curatorImageUrl
+        if let imageUrl = URL(string: curatorImageAddress) {
+            DispatchQueue.global().async {
+                do{
+                    let imageData = try Data(contentsOf: imageUrl)
+                    let downloadedImage = UIImage(data: imageData)
+                    DispatchQueue.main.async {
+                        cell.curatorImage.image = downloadedImage
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        cell.curatorImage.layer.cornerRadius = cell.curatorImage.frame.height/2
+        cell.curatorImage.clipsToBounds = true
+
         return cell
     }
 
