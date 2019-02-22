@@ -27,8 +27,18 @@ class open_api_practiceUITests: XCTestCase {
     }
 
     func testNewHitsPlaylistsHaveTwenty() {
-        let playlists = XCUIApplication().tables.cells
+        let playlists = XCUIApplication().tables.cells.matching(identifier: "new_hits_playlist")
         XCTAssert(playlists.count == 20)
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    } 
+    }
+    
+    func testNewHitsPlaylistsHavePlaylistName() {
+        let playlistname = XCUIApplication().tables.cells.matching(identifier: "new_hits_playlist")
+        XCTAssert(playlistname.element(boundBy: 0).staticTexts.matching(identifier: "playlist_name").element(boundBy: 0).label != "" )
+    }
+    
+    func testNewHitsPlaylistsHaveCuratorName() {
+        let playlistname = XCUIApplication().tables.cells.matching(identifier: "new_hits_playlist")
+        XCTAssert(playlistname.element(boundBy: 0).staticTexts.matching(identifier: "curator_name").element(boundBy: 0).label != "" )
+    }
 }
