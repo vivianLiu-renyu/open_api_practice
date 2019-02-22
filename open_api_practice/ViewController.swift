@@ -4,7 +4,6 @@ import KKBOXOpenAPISwift
 let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    //let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -14,7 +13,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
         _ = try? API.fetchAccessTokenByClientCredential { result in
             switch result {
@@ -36,23 +34,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         self.view.backgroundColor = UIColor.black
     }
-    
-    var playlistsLists: [PlaylistData] = [
-        PlaylistData(playlistName: "Yayaya", curatorName: "Stooooopid", playlistImageUrl: "https://i.kfs.io/playlist/global/26541395v33/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94562966v27/cropresize/300x300.jpg"),
-        PlaylistData(playlistName: "Yolo", curatorName: "Lol", playlistImageUrl: "https://i.kfs.io/playlist/global/26541409v110/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563062v1/cropresize/300x300.jpg"),
-        PlaylistData(playlistName: "Just A Deam", curatorName: "Neyo", playlistImageUrl: "https://i.kfs.io/playlist/global/26541410v96/cropresize/1000x1000.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563302v1/cropresize/300x300.jpg"),
-        PlaylistData(playlistName: "BATS", curatorName: "Jikook", playlistImageUrl: "https://i.kfs.io/playlist/global/26541412v100/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563350v1/cropresize/300x300.jpg"),
-        PlaylistData(playlistName: "Whatsoever I don't actually care, yeahhhhhhhhhh", curatorName: "I don't care anymore!!!", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg"),
-        PlaylistData(playlistName: "Everything Is Awesome", curatorName: "Lego", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg"),
-        PlaylistData(playlistName: "Age Of Empire", curatorName: "Nanohard", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg")
-    ]
-    
-    // MARK: - Table view data source
-    
-    //    override func numberOfSections(in tableView: UITableView) -> Int {
-    //        // #warning Incomplete implementation, return the number of sections
-    //        return 0
-    //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playlistData.count
@@ -111,20 +92,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //    }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 45
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
-        let sectionTitle = UILabel(frame: CGRect(x: 30, y: 0, width:
+        let sectionTitle = UILabel(frame: CGRect(x: 30, y: 10, width:
             tableView.bounds.size.width, height: tableView.bounds.size.height))
-        sectionTitle.font = UIFont(name: "Test", size: 20)
+        sectionTitle.font = UIFont(name: "Test", size: 30)
         sectionTitle.text = "熱門歌單"
         sectionTitle.sizeToFit()
         sectionTitle.textColor = UIColor.white
         headerView.addSubview(sectionTitle)
         
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     /*
      // Override to support conditional editing of the table view.
