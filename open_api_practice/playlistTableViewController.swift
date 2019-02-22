@@ -1,11 +1,11 @@
 import UIKit
 import KKBOXOpenAPISwift
-let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
 
 class playlistTableViewController: UITableViewController {
     //let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
+    let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +98,23 @@ class playlistTableViewController: UITableViewController {
         cell.curatorImage.clipsToBounds = true
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "熱門歌單"
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        let sectionTitle = UILabel()
+        sectionTitle.text = "熱門歌單"
+        headerView.addSubview(sectionTitle)
+        
+        return headerView
     }
 
     /*
