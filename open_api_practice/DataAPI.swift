@@ -24,4 +24,24 @@ class DataAPI: NSObject {
         
         return datas
     }
+    
+    func getSongTrack(by playlistID: String) -> [KKTrackInfo] {
+        var datas: [KKTrackInfo] = []
+        let group = DispatchGroup()
+        
+        group.enter()
+        _ = try? API.fetch(tracksInPlaylist: playlistID) { result in
+            switch result {
+            case .error(let error):
+                print(error)
+            case .success(let songTrack):
+                print(songTrack)
+                datas = songTrack.tracks
+                group.leave()
+            }
+        }
+        group.wait()
+        
+        return datas
+    }
 }

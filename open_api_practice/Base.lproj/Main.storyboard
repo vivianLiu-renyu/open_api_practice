@@ -98,10 +98,13 @@
                             <outlet property="delegate" destination="2FX-xS-KWi" id="2kL-AP-ejV"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="XO2-eI-jOu" kind="show" identifier="showPlaylistSongTrackSegue" id="Utg-d0-khW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yN7-Ak-TzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="-565.36731634182911"/>
+            <point key="canvasLocation" x="55" y="-565"/>
         </scene>
         <!--Song Track Table View Controller-->
         <scene sceneID="jjX-Wo-t0m">
@@ -168,7 +171,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGf-ua-THT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="93.103448275862078"/>
+            <point key="canvasLocation" x="825" y="-565"/>
         </scene>
     </scenes>
     <resources>

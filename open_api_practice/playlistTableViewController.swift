@@ -30,16 +30,6 @@ class playlistTableViewController: UITableViewController {
         
         self.view.backgroundColor = UIColor.black
     }
-    
-    var playlistsLists: [PlaylistData] = [
-        PlaylistData(playlistName: "Yayaya", curatorName: "Stooooopid", playlistImageUrl: "https://i.kfs.io/playlist/global/26541395v33/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94562966v27/cropresize/300x300.jpg"),
-        PlaylistData(playlistName: "Yolo", curatorName: "Lol", playlistImageUrl: "https://i.kfs.io/playlist/global/26541409v110/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563062v1/cropresize/300x300.jpg"),
-        PlaylistData(playlistName: "Just A Deam", curatorName: "Neyo", playlistImageUrl: "https://i.kfs.io/playlist/global/26541410v96/cropresize/1000x1000.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563302v1/cropresize/300x300.jpg"),
-        PlaylistData(playlistName: "BATS", curatorName: "Jikook", playlistImageUrl: "https://i.kfs.io/playlist/global/26541412v100/cropresize/300x300.jpg", curatorImageUrl: "https://i.kfs.io/muser/global/94563350v1/cropresize/300x300.jpg"),
-        PlaylistData(playlistName: "Whatsoever I don't actually care, yeahhhhhhhhhh", curatorName: "I don't care anymore!!!", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg"),
-        PlaylistData(playlistName: "Everything Is Awesome", curatorName: "Lego", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg"),
-        PlaylistData(playlistName: "Age Of Empire", curatorName: "Nanohard", playlistImageUrl: "https://imgs.niusnews.com/upload/posts/po5_34182_1431502613.jpg", curatorImageUrl: "https://pbs.twimg.com/profile_images/949643576895557632/aLnmtkBC_400x400.jpg")
-    ]
 
     // MARK: - Table view data source
 
@@ -99,6 +89,16 @@ class playlistTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let row = tableView.indexPathForSelectedRow?.row
+        
+        if segue.identifier == "showPlaylistSongTrackSegue" {
+            let controller = segue.destination as? songTrackTableViewController
+            print("Go To Another Page")
+            controller?.songTracksList = GetSongTrackData.initSongTrackData((controller?.songTracksList)!, playlistID: playlistData[row ?? 0].playlistID)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -132,16 +132,6 @@ class playlistTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
     */
 

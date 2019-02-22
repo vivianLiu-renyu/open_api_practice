@@ -15,7 +15,7 @@
 		C87C500621F1750C00949394 /* playlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500321F1750C00949394 /* playlistTableViewCell.swift */; };
 		C87C500721F1750C00949394 /* PlaylistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500421F1750C00949394 /* PlaylistData.swift */; };
 		C87C500821F1750C00949394 /* playlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500521F1750C00949394 /* playlistTableViewController.swift */; };
-		C87C500A21F1C1C400949394 /* GetPlaylistsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500921F1C1C400949394 /* GetPlaylistsData.swift */; };
+		C87C500A21F1C1C400949394 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500921F1C1C400949394 /* GetData.swift */; };
 		C87C500C21F2041200949394 /* DataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500B21F2041200949394 /* DataAPI.swift */; };
 		C8B7DE0121DF0C480037240A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7DE0021DF0C480037240A /* AppDelegate.swift */; };
 		C8B7DE0321DF0C480037240A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7DE0221DF0C480037240A /* ViewController.swift */; };
@@ -48,7 +48,7 @@
 		C87C500321F1750C00949394 /* playlistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playlistTableViewCell.swift; sourceTree = "<group>"; };
 		C87C500421F1750C00949394 /* PlaylistData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistData.swift; sourceTree = "<group>"; };
 		C87C500521F1750C00949394 /* playlistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playlistTableViewController.swift; sourceTree = "<group>"; };
-		C87C500921F1C1C400949394 /* GetPlaylistsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaylistsData.swift; sourceTree = "<group>"; };
+		C87C500921F1C1C400949394 /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		C87C500B21F2041200949394 /* DataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAPI.swift; sourceTree = "<group>"; };
 		C8B7DDFD21DF0C480037240A /* open_api_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = open_api_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B7DE0021DF0C480037240A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				C8B7DE0721DF0C490037240A /* Assets.xcassets */,
 				C8B7DE0921DF0C490037240A /* LaunchScreen.storyboard */,
 				C8B7DE0C21DF0C490037240A /* Info.plist */,
-				C87C500921F1C1C400949394 /* GetPlaylistsData.swift */,
+				C87C500921F1C1C400949394 /* GetData.swift */,
 				C87C500B21F2041200949394 /* DataAPI.swift */,
 			);
 			path = open_api_practice;
@@ -316,7 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D2C96DD21FB14B2007DCAEA /* songTrackTableViewCell.swift in Sources */,
-				C87C500A21F1C1C400949394 /* GetPlaylistsData.swift in Sources */,
+				C87C500A21F1C1C400949394 /* GetData.swift in Sources */,
 				8D2C96DF21FB15AA007DCAEA /* songTrackTableViewController.swift in Sources */,
 				C8B7DE0321DF0C480037240A /* ViewController.swift in Sources */,
 				C87C500821F1750C00949394 /* playlistTableViewController.swift in Sources */,

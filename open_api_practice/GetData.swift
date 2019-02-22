@@ -22,3 +22,21 @@ class GetPlaylistsData: NSObject {
         return allPlaylists
     }
 }
+
+class GetSongTrackData: NSObject {
+    static func initSongTrackData(_ allSongTracks: songTracksAPIData, playlistID: String) -> songTracksAPIData {
+        var songTracksList: [KKTrackInfo] = []
+        
+        allSongTracks.songTracksArray = []
+        
+        songTracksList = getSongTracks(by: playlistID)
+        
+        print("Song Track: ", songTracksList)
+        
+        for (info) in songTracksList {
+            allSongTracks.songTracksArray?.append(setSongTrackInfo(as: info))
+        }
+        
+        return allSongTracks
+    }
+}
