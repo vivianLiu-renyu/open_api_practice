@@ -9,8 +9,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
-    
-    
+    var selectedRow = 0
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -110,6 +110,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        selectedRow = indexPath.row
+        self.performSegue(withIdentifier: "playlistMore", sender: self)
     }
     /*
      // Override to support conditional editing of the table view.
@@ -146,14 +148,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      }
      */
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
+        if (segue.identifier == "playlistMore") {
+            let nextPage = segue.destination as! songTrackTableViewController
+            let playlistID = playlistData[selectedRow].playlistID
+            nextPage.playlistID = playlistID
+        }
      }
-     */
+ 
     
 }

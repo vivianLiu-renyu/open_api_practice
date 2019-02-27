@@ -8,6 +8,7 @@ class PlaylistData {
     var playlistName = ""
     var playlistImageUrl = ""
     var playlistURL = ""
+    var playlistID = ""
     var curatorName = ""
     var curatorImageUrl = ""
     
@@ -15,6 +16,7 @@ class PlaylistData {
         playlistName = ""
         playlistImageUrl = ""
         playlistURL = ""
+        playlistID = ""
         curatorName = ""
         curatorImageUrl = ""
     }
@@ -38,6 +40,7 @@ func setPlaylistsInfo(as info: KKPlaylistInfo) -> PlaylistData {
     let playlistData = PlaylistData()
 
     playlistData.playlistName = info.title
+    playlistData.playlistID = info.ID
     playlistData.playlistImageUrl = ((info.images[2].url)?.absoluteString)!
     
     let owner = info.owner

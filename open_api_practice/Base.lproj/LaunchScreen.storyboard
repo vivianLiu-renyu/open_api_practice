@@ -18,23 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="KKBOX" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GCp-GZ-VG3">
-                                <rect key="frame" x="120.5" y="314.5" width="134" height="38"/>
-                                <color key="backgroundColor" red="0.39847414279999999" green="0.78448278650000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SM1867_1acf924f-4213-4a4a-988a-0f3d0278c38f_800x" translatesAutoresizingMaskIntoConstraints="NO" id="dnS-jY-Xss">
+                                <rect key="frame" x="67" y="207" width="241" height="253"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="134" id="JUV-ya-qKw"/>
-                                    <constraint firstAttribute="height" constant="38" id="utQ-40-Zov"/>
+                                    <constraint firstAttribute="width" constant="241" id="1cl-gZ-fMX"/>
+                                    <constraint firstAttribute="height" constant="253" id="fY4-ze-caf"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.39847414275984083" green="0.78448278646575398" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="GCp-GZ-VG3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0UF-6K-A6A"/>
-                            <constraint firstItem="GCp-GZ-VG3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="J3e-q9-cKY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dnS-jY-Xss" secondAttribute="trailing" constant="67" id="CgQ-ug-7zD"/>
+                            <constraint firstItem="dnS-jY-Xss" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="DEN-jG-ZgS"/>
+                            <constraint firstItem="dnS-jY-Xss" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dbh-ZF-c5L"/>
+                            <constraint firstItem="dnS-jY-Xss" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="N6a-qC-Sa7"/>
+                            <constraint firstItem="dnS-jY-Xss" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="PrU-ku-qOs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dnS-jY-Xss" secondAttribute="trailing" constant="67" id="fHK-Fi-IS1"/>
+                            <constraint firstItem="dnS-jY-Xss" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nKl-Qk-7ey"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dnS-jY-Xss" secondAttribute="trailing" constant="67" id="qhm-Yh-VuQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -44,4 +44,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SM1867_1acf924f-4213-4a4a-988a-0f3d0278c38f_800x" width="743" height="648"/>
+    </resources>
 </document>
