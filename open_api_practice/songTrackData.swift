@@ -1,13 +1,19 @@
 import Foundation
 
-class songTrackData {
-    var songCoverURL = ""
+class SongTrackData {
     var songName = ""
     var artistName = ""
+    var songCoverURL = ""
     
-    init(songCoverURL:String, songName:String, artistName:String) {
-        self.songCoverURL = songCoverURL
+    init() {
+        songName = ""
+        artistName = ""
+        songCoverURL = ""
+    }
+    
+    init(songCoverURL: String, songName: String, artistName: String) {
         self.songName = songName
         self.artistName = artistName
+        self.songCoverURL = songCoverURL
     }
 }

@@ -9,6 +9,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
+    var passData: Bool = false
     var selectedRow = 0
         
     override func viewDidLoad() {
@@ -28,7 +29,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if let playlistDat = self.playlistsList.playlistArray {
                     self.playlistData = playlistDat
                     self.loadView()
-                    
                 }
             }
         }
@@ -43,11 +43,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "playlist", for: indexPath) as! playlistTableViewCell
         let playlistDat = self.playlistData[indexPath.row]
         cell.displayContent(with: playlistDat)
-        
-        print("Cell", cell)
-        
-        cell.playlistName.text = playlistData[indexPath.row].playlistName
-        cell.curatorName.text = playlistData[indexPath.row].curatorName
         
         let playlistImageAddress = playlistData[indexPath.row].playlistImageUrl
         if let imageUrl = URL(string: playlistImageAddress) {
@@ -109,45 +104,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        
         selectedRow = indexPath.row
-        self.performSegue(withIdentifier: "playlistMore", sender: self)
+        print("indexPath.row:  ", indexPath.row)
+        performSegue(withIdentifier: "playlistMore", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
     
      // MARK: - Navigation
      
@@ -157,10 +119,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      // Pass the selected object to the new view controller.
         if (segue.identifier == "playlistMore") {
             let nextPage = segue.destination as! songTrackTableViewController
-            let playlistID = playlistData[selectedRow].playlistID
+            let playlist = playlistData[selectedRow]
+            let playlistID = playlist.playlistID
+            let playlistName = playlist.playlistName
+            
+            nextPage.playlistName = playlistName
             nextPage.playlistID = playlistID
+            nextPage.territory = .taiwan
+            print("nextPage.playlistName: ", playlistName)
         }
      }
- 
-    
 }

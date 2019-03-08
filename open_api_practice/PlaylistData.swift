@@ -4,11 +4,17 @@ import KKBOXOpenAPISwift
 class PlaylistsAPIData {
     var playlistArray: [PlaylistData]? = nil
 }
+
+class SongTracksAPIData {
+    var songTracksArray: [SongTrackData]? = nil
+}
+
 class PlaylistData {
     var playlistName = ""
     var playlistImageUrl = ""
     var playlistURL = ""
     var playlistID = ""
+    //var playlistTerritory: KKTerritory = .taiwan
     var curatorName = ""
     var curatorImageUrl = ""
     
@@ -17,6 +23,7 @@ class PlaylistData {
         playlistImageUrl = ""
         playlistURL = ""
         playlistID = ""
+        //playlistTerritory = .taiwan
         curatorName = ""
         curatorImageUrl = ""
     }
@@ -33,7 +40,6 @@ func getPlaylists(territory: KKTerritory) -> [KKPlaylistInfo] {
     let playlistInfo = DataAPI().getNewHitsPlaylist(territory: territory)
 
     return playlistInfo
-    //return ["a":"a"]
 }
 
 func setPlaylistsInfo(as info: KKPlaylistInfo) -> PlaylistData {
@@ -48,4 +54,20 @@ func setPlaylistsInfo(as info: KKPlaylistInfo) -> PlaylistData {
     playlistData.curatorImageUrl = ((owner.images[2].url)?.absoluteString)!
     
     return playlistData
+}
+
+func getSongTrackInPlaylist(playlistID: String, territory: KKTerritory) -> KKTrackList {
+    let songTrackList = DataAPI().getPlaylistMore(playlistID: playlistID, territory: territory)
+    
+    return songTrackList
+}
+
+func setSongTrackInfo(as info: KKTrackInfo) -> SongTrackData {
+    let songTrackData = SongTrackData()
+    
+    songTrackData.songName = info.name
+    songTrackData.artistName = (info.album?.artist?.name)!
+    songTrackData.songCoverURL = ((info.album?.images[2].url)?.absoluteString)!
+    
+    return songTrackData
 }
