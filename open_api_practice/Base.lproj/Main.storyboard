@@ -124,6 +124,9 @@
                         <viewLayoutGuide key="safeArea" id="bsl-hU-Rjb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="VWc-fA-3LK"/>
+                    <connections>
+                        <outlet property="hotPlaylistTableView" destination="aKP-9T-spy" id="GpL-Lc-CO0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlV-f4-eBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

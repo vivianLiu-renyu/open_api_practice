@@ -4,8 +4,8 @@ import KKBOXOpenAPISwift
 let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
 
 class HomePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet weak var hotPlaylistTableView: UITableView!
     
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
@@ -29,7 +29,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             DispatchQueue.main.async {
                 if let playlistDat = self.playlistsList.playlistArray {
                     self.playlistData = playlistDat
-                    self.loadView()
+                    self.hotPlaylistTableView.reloadData()
                 }
             }
         }
@@ -82,10 +82,6 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "熱門歌單"
-//    }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
@@ -105,10 +101,6 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        selectedRow = indexPath.row
-        print("indexPath.row:  ", indexPath.row)
-        performSegue(withIdentifier: "playlistMore", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -116,11 +108,10 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
         if (segue.identifier == "playlistMore") {
+            let row = hotPlaylistTableView.indexPathForSelectedRow?.row
             let nextPage = segue.destination as! songTrackTableViewController
-            let playlist = playlistData[selectedRow]
+            let playlist = playlistData[row!]
             let playlistID = playlist.playlistID
             let playlistName = playlist.playlistName
             
@@ -130,21 +121,4 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             print("nextPage.playlistName: ", playlistName)
         }
      }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if (identifier == "playlistMore") {
-            if doingSegue {
-                return false
-            }
-            else {
-                doingSegue = true
-                return true
-            }
-        }
-        return true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        doingSegue = false
-    }
 }

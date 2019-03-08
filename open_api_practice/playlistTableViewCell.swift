@@ -12,11 +12,11 @@ class playlistTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-   // override func setSelected(_ selected: Bool, animated: Bool) {
-    //    super.setSelected(selected, animated: animated)
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
 
-        // Configure the view for the selected state
-    //}
+    }
     
     func displayContent(with playlistData: PlaylistData) {
         self.playlistName.text = playlistData.playlistName
