@@ -3,7 +3,7 @@ import KKBOXOpenAPISwift
 
 let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -11,6 +11,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var playlistData: [PlaylistData] = []
     var passData: Bool = false
     var selectedRow = 0
+    var doingSegue = false
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,4 +130,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("nextPage.playlistName: ", playlistName)
         }
      }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == "playlistMore") {
+            if doingSegue {
+                return false
+            }
+            else {
+                doingSegue = true
+                return true
+            }
+        }
+        return true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        doingSegue = false
+    }
 }

@@ -14,7 +14,6 @@ class PlaylistData {
     var playlistImageUrl = ""
     var playlistURL = ""
     var playlistID = ""
-    //var playlistTerritory: KKTerritory = .taiwan
     var curatorName = ""
     var curatorImageUrl = ""
     
@@ -23,16 +22,8 @@ class PlaylistData {
         playlistImageUrl = ""
         playlistURL = ""
         playlistID = ""
-        //playlistTerritory = .taiwan
         curatorName = ""
         curatorImageUrl = ""
-    }
-    
-    init(playlistName: String, curatorName: String, playlistImageUrl: String, curatorImageUrl: String) {
-        self.playlistName = playlistName
-        self.playlistImageUrl = playlistImageUrl
-        self.curatorName = curatorName
-        self.curatorImageUrl = curatorImageUrl
     }
 }
 
