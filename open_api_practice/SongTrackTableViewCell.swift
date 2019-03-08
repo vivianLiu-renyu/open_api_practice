@@ -1,6 +1,6 @@
 import UIKit
 
-class songTrackTableViewCell: UITableViewCell {
+class SongTrackTableViewCell: UITableViewCell {
     @IBOutlet weak var songImage: UIImageView!
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var artistName: UILabel!
@@ -13,7 +13,4 @@ class songTrackTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    
-
 }

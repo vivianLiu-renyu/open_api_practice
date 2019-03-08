@@ -28,7 +28,7 @@
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="playlist" rowHeight="165" id="QS9-2R-Qkw" customClass="playlistTableViewCell" customModule="open_api_practice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="playlist" rowHeight="165" id="QS9-2R-Qkw" customClass="PlaylistTableViewCell" customModule="open_api_practice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="369" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QS9-2R-Qkw" id="qFc-Ig-bpP">
@@ -125,7 +125,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="VWc-fA-3LK"/>
                     <connections>
-                        <outlet property="hotPlaylistTableView" destination="aKP-9T-spy" id="GpL-Lc-CO0"/>
+                        <outlet property="newHitsPlaylistTableView" destination="aKP-9T-spy" id="GpL-Lc-CO0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlV-f4-eBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,7 +142,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlist" rowHeight="165" id="Ak1-Qa-gb1" customClass="playlistTableViewCell" customModule="open_api_practice" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlist" rowHeight="165" id="Ak1-Qa-gb1" customClass="PlaylistTableViewCell" customModule="open_api_practice" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="165"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ak1-Qa-gb1" id="NB4-Ut-05c">
@@ -231,13 +231,13 @@
         <!--Song Track Table View Controller-->
         <scene sceneID="jjX-Wo-t0m">
             <objects>
-                <tableViewController id="XO2-eI-jOu" userLabel="Song Track Table View Controller" customClass="songTrackTableViewController" customModule="open_api_practice" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="XO2-eI-jOu" userLabel="Song Track Table View Controller" customClass="SongTrackTableViewController" customModule="open_api_practice" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lbn-nl-qfi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songTrack" rowHeight="95" id="puz-ac-cfN" customClass="songTrackTableViewCell" customModule="open_api_practice" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songTrack" rowHeight="95" id="puz-ac-cfN" customClass="SongTrackTableViewCell" customModule="open_api_practice" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="puz-ac-cfN" id="wT6-kl-rD4">

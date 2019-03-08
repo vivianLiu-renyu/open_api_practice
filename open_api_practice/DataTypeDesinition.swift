@@ -27,6 +27,18 @@ class PlaylistData {
     }
 }
 
+class SongTrackData {
+    var songName = ""
+    var artistName = ""
+    var songCoverURL = ""
+    
+    init() {
+        songName = ""
+        artistName = ""
+        songCoverURL = ""
+    }
+}
+
 func getPlaylists(territory: KKTerritory) -> [KKPlaylistInfo] {
     let playlistInfo = DataAPI().getNewHitsPlaylist(territory: territory)
 

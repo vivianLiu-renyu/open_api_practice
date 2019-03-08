@@ -1,6 +1,6 @@
 import UIKit
 
-class playlistTableViewCell: UITableViewCell {
+class PlaylistTableViewCell: UITableViewCell {
 
     @IBOutlet weak var playlistName: UILabel!
     @IBOutlet weak var curatorName: UILabel!
@@ -14,8 +14,6 @@ class playlistTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-
     }
     
     func displayContent(with playlistData: PlaylistData) {
