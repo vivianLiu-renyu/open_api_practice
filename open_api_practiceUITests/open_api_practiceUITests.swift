@@ -41,4 +41,9 @@ class open_api_practiceUITests: XCTestCase {
         let playlistname = XCUIApplication().tables.cells.matching(identifier: "new_hits_playlist")
         XCTAssert(playlistname.element(boundBy: 0).staticTexts.matching(identifier: "curator_name").element(boundBy: 0).label != "" )
     }
+    
+    func testNewHitsPlaylistsHavePlaylistCover() {
+        let playlistname = XCUIApplication().tables.cells.matching(identifier: "new_hits_playlist")
+        XCTAssert(playlistname.element(boundBy: 0).images.matching(identifier: "playlist_cover").element(boundBy: 0).exists == true )
+    }
 }
