@@ -1,5 +1,6 @@
 import Foundation
 import KKBOXOpenAPISwift
+
 class GetPlaylistsData: NSObject {
     static func initPlaylistData(_ allPlaylists: PlaylistsAPIData) -> PlaylistsAPIData {
         var playlistList: [KKTerritory:[KKPlaylistInfo]] = [:]
@@ -18,7 +19,21 @@ class GetPlaylistsData: NSObject {
             }
         }
 
-        print("print playlistList", playlistList)
         return allPlaylists
+    }
+}
+
+class GetSongTracksData: NSObject {
+    static func initSongTracksData(_ songTracks: SongTracksAPIData, playlistID: String, territory: KKTerritory) -> SongTracksAPIData {
+        var songTracksList: KKTrackList
+        
+        songTracks.songTracksArray = []
+        songTracksList = getSongTrackInPlaylist(playlistID: playlistID, territory: territory)
+        
+        for info in songTracksList.tracks {
+            songTracks.songTracksArray?.append(setSongTrackInfo(as: info))
+        }
+        
+        return songTracks
     }
 }
