@@ -21,7 +21,7 @@
 		C8B7DE0621DF0C480037240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B7DE0421DF0C480037240A /* Main.storyboard */; };
 		C8B7DE0821DF0C490037240A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8B7DE0721DF0C490037240A /* Assets.xcassets */; };
 		C8B7DE0B21DF0C490037240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B7DE0921DF0C490037240A /* LaunchScreen.storyboard */; };
-		C8B7DE1621DF0C490037240A /* open_api_practiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7DE1521DF0C490037240A /* open_api_practiceUITests.swift */; };
+		C8B7DE1621DF0C490037240A /* NewHitsPlaylistTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7DE1521DF0C490037240A /* NewHitsPlaylistTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 		C8B7DE0A21DF0C490037240A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8B7DE0C21DF0C490037240A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8B7DE1121DF0C490037240A /* open_api_practiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = open_api_practiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8B7DE1521DF0C490037240A /* open_api_practiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = open_api_practiceUITests.swift; sourceTree = "<group>"; };
+		C8B7DE1521DF0C490037240A /* NewHitsPlaylistTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHitsPlaylistTest.swift; sourceTree = "<group>"; };
 		C8B7DE1721DF0C490037240A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +143,7 @@
 		C8B7DE1421DF0C490037240A /* open_api_practiceUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C8B7DE1521DF0C490037240A /* open_api_practiceUITests.swift */,
+				C8B7DE1521DF0C490037240A /* NewHitsPlaylistTest.swift */,
 				C8B7DE1721DF0C490037240A /* Info.plist */,
 			);
 			path = open_api_practiceUITests;
@@ -328,7 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8B7DE1621DF0C490037240A /* open_api_practiceUITests.swift in Sources */,
+				C8B7DE1621DF0C490037240A /* NewHitsPlaylistTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

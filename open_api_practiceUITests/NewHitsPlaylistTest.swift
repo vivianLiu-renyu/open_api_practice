@@ -8,7 +8,8 @@
 
 import XCTest
 
-class open_api_practiceUITests: XCTestCase {
+class NewHitsPlaylistTest: XCTestCase {
+    let XCUIAPP = XCUIApplication()
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -17,7 +18,7 @@ class open_api_practiceUITests: XCTestCase {
         continueAfterFailure = false
 
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        XCUIAPP.launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -27,18 +28,15 @@ class open_api_practiceUITests: XCTestCase {
     }
 
     func testNewHitsPlaylistsHaveTwenty() {
-        let playlists = XCUIApplication().tables.cells.matching(identifier: "new_hits_playlist")
+        let playlists = XCUIAPP.tables.cells.matching(identifier: "new_hits_playlist")
         XCTAssert(playlists.count == 20)
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testNewHitsPlaylistsHavePlaylistName() {
-        let playlistname = XCUIApplication().tables.cells.matching(identifier: "new_hits_playlist")
+    func testNewHitsPlaylistsHavePlaylistinformation() {
+        let playlistname = XCUIAPP.tables.cells.matching(identifier: "new_hits_playlist")
         XCTAssert(playlistname.element(boundBy: 0).staticTexts.matching(identifier: "playlist_name").element(boundBy: 0).label != "" )
-    }
-    
-    func testNewHitsPlaylistsHaveCuratorName() {
-        let playlistname = XCUIApplication().tables.cells.matching(identifier: "new_hits_playlist")
         XCTAssert(playlistname.element(boundBy: 0).staticTexts.matching(identifier: "curator_name").element(boundBy: 0).label != "" )
+        XCTAssert(playlistname.element(boundBy: 0).images.matching(identifier: "playlist_cover").element(boundBy: 0).exists == true )
     }
 }
