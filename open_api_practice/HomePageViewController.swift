@@ -5,13 +5,10 @@ let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bb
 
 class HomePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var hotPlaylistTableView: UITableView!
+    @IBOutlet weak var newHitsPlaylistTableView: UITableView!
     
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
-    var passData: Bool = false
-    var selectedRow = 0
-    var doingSegue = false
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +22,11 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         DispatchQueue.global().async {
-            self.playlistsList = GetPlaylistsData.initPlaylistData(self.playlistsList)
+            self.playlistsList = GetPlaylistsData.initNewHitsPlaylistData(self.playlistsList)
             DispatchQueue.main.async {
                 if let playlistDat = self.playlistsList.playlistArray {
                     self.playlistData = playlistDat
-                    self.hotPlaylistTableView.reloadData()
+                    self.newHitsPlaylistTableView.reloadData()
                 }
             }
         }
@@ -41,7 +38,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playlist", for: indexPath) as! playlistTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "playlist", for: indexPath) as! PlaylistTableViewCell
         let playlistDat = self.playlistData[indexPath.row]
         cell.displayContent(with: playlistDat)
         
@@ -107,10 +104,10 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "playlistMore") {
-            let row = hotPlaylistTableView.indexPathForSelectedRow?.row
-            let nextPage = segue.destination as! songTrackTableViewController
+            let row = newHitsPlaylistTableView.indexPathForSelectedRow?.row
+            let nextPage = segue.destination as! SongTrackTableViewController
             let playlist = playlistData[row!]
             let playlistID = playlist.playlistID
             let playlistName = playlist.playlistName
@@ -120,5 +117,5 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             nextPage.territory = .taiwan
             print("nextPage.playlistName: ", playlistName)
         }
-     }
+    }
 }

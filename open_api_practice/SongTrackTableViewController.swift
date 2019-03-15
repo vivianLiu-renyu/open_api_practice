@@ -1,7 +1,7 @@
 import UIKit
 import KKBOXOpenAPISwift
 
-class songTrackTableViewController: UITableViewController {
+class SongTrackTableViewController: UITableViewController {
     var playlistID: String!
     var playlistName: String = ""
     var territory: KKTerritory!
@@ -29,7 +29,7 @@ class songTrackTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "songTrack", for: indexPath) as! songTrackTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "songTrack", for: indexPath) as! SongTrackTableViewCell
 
         cell.songName.text = songTrackData[indexPath.row].songName
         cell.artistName.text = songTrackData[indexPath.row].artistName

@@ -2,7 +2,7 @@ import Foundation
 import KKBOXOpenAPISwift
 
 class GetPlaylistsData: NSObject {
-    static func initPlaylistData(_ allPlaylists: PlaylistsAPIData) -> PlaylistsAPIData {
+    static func initNewHitsPlaylistData(_ allPlaylists: PlaylistsAPIData) -> PlaylistsAPIData {
         var playlistList: [KKTerritory:[KKPlaylistInfo]] = [:]
         
         allPlaylists.playlistArray = []

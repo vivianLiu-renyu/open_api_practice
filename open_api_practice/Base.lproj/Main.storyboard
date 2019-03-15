@@ -28,7 +28,7 @@
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="playlist" rowHeight="165" id="QS9-2R-Qkw" customClass="playlistTableViewCell" customModule="open_api_practice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="playlist" rowHeight="165" id="QS9-2R-Qkw" customClass="PlaylistTableViewCell" customModule="open_api_practice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="369" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QS9-2R-Qkw" id="qFc-Ig-bpP">
@@ -125,119 +125,23 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="VWc-fA-3LK"/>
                     <connections>
-                        <outlet property="hotPlaylistTableView" destination="aKP-9T-spy" id="GpL-Lc-CO0"/>
+                        <outlet property="newHitsPlaylistTableView" destination="aKP-9T-spy" id="GpL-Lc-CO0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlV-f4-eBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1450.4000000000001" y="-552.77361319340332"/>
         </scene>
-        <!--Playlist Table View Controller-->
-        <scene sceneID="arF-Za-Jj7">
-            <objects>
-                <tableViewController id="2FX-xS-KWi" customClass="playlistTableViewController" customModule="open_api_practice" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f0v-Pv-uJu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlist" rowHeight="165" id="Ak1-Qa-gb1" customClass="playlistTableViewCell" customModule="open_api_practice" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="165"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ak1-Qa-gb1" id="NB4-Ut-05c">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="164.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌單名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tlm-0B-uCr">
-                                            <rect key="frame" x="178" y="36" width="177" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="playlist_name"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playlist_default" translatesAutoresizingMaskIntoConstraints="NO" id="Xk7-vt-Hbq">
-                                            <rect key="frame" x="20" y="15" width="143" height="143"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="143" id="BdA-5q-XQc"/>
-                                                <constraint firstAttribute="height" constant="143" id="oFk-QV-8v5"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="playlist_cover"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curator_default" translatesAutoresizingMaskIntoConstraints="NO" id="v1h-lp-NkJ">
-                                            <rect key="frame" x="178" y="95" width="50" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="fXN-B3-gRT"/>
-                                                <constraint firstAttribute="width" constant="50" id="iUq-ZO-jCX"/>
-                                            </constraints>
-                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="curator_cover"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="編輯人名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fio-yj-nGY">
-                                            <rect key="frame" x="243" y="107" width="112" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="curator_name"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="v1h-lp-NkJ" secondAttribute="bottom" constant="15" id="2qF-k3-joJ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Xk7-vt-Hbq" secondAttribute="bottom" constant="4" id="Bay-OZ-YKA"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="fio-yj-nGY" secondAttribute="trailing" constant="4" id="Dls-3c-wrF"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="fio-yj-nGY" secondAttribute="bottom" constant="29" id="Qa1-PZ-wIY"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Tlm-0B-uCr" secondAttribute="trailing" constant="4" id="SKT-ic-chQ"/>
-                                        <constraint firstItem="Xk7-vt-Hbq" firstAttribute="leading" secondItem="NB4-Ut-05c" secondAttribute="leadingMargin" constant="4" id="TfJ-yE-NjK"/>
-                                        <constraint firstItem="v1h-lp-NkJ" firstAttribute="leading" secondItem="Xk7-vt-Hbq" secondAttribute="trailing" constant="15" id="Uwc-wD-O5X"/>
-                                        <constraint firstItem="Xk7-vt-Hbq" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="topMargin" constant="4" id="hBN-YS-Syl"/>
-                                        <constraint firstItem="v1h-lp-NkJ" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="top" constant="95" id="noF-Bp-VQW"/>
-                                        <constraint firstItem="Tlm-0B-uCr" firstAttribute="leading" secondItem="Xk7-vt-Hbq" secondAttribute="trailing" constant="15" id="s8L-47-QMm"/>
-                                        <constraint firstItem="Tlm-0B-uCr" firstAttribute="top" secondItem="NB4-Ut-05c" secondAttribute="topMargin" constant="25" id="sVb-58-8h5"/>
-                                        <constraint firstItem="v1h-lp-NkJ" firstAttribute="top" secondItem="Tlm-0B-uCr" secondAttribute="bottom" constant="25" id="tHe-sp-TZj"/>
-                                        <constraint firstItem="fio-yj-nGY" firstAttribute="leading" secondItem="v1h-lp-NkJ" secondAttribute="trailing" constant="15" id="znq-My-d3z"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.14304027329999999" green="0.14304027329999999" blue="0.14304027329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new_hits_playlist"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="curatorImage" destination="v1h-lp-NkJ" id="XNl-ej-Jhh"/>
-                                    <outlet property="curatorName" destination="fio-yj-nGY" id="hMc-Un-83K"/>
-                                    <outlet property="playlistImage" destination="Xk7-vt-Hbq" id="Ngh-uw-bnE"/>
-                                    <outlet property="playlistName" destination="Tlm-0B-uCr" id="ppX-nh-7aL"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="2FX-xS-KWi" id="jTv-hA-ELi"/>
-                            <outlet property="delegate" destination="2FX-xS-KWi" id="2kL-AP-ejV"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yN7-Ak-TzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="-565.36731634182911"/>
-        </scene>
         <!--Song Track Table View Controller-->
         <scene sceneID="jjX-Wo-t0m">
             <objects>
-                <tableViewController id="XO2-eI-jOu" userLabel="Song Track Table View Controller" customClass="songTrackTableViewController" customModule="open_api_practice" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="XO2-eI-jOu" userLabel="Song Track Table View Controller" customClass="SongTrackTableViewController" customModule="open_api_practice" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lbn-nl-qfi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songTrack" rowHeight="95" id="puz-ac-cfN" customClass="songTrackTableViewCell" customModule="open_api_practice" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songTrack" rowHeight="95" id="puz-ac-cfN" customClass="SongTrackTableViewCell" customModule="open_api_practice" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="puz-ac-cfN" id="wT6-kl-rD4">
