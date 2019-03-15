@@ -3,12 +3,15 @@ import KKBOXOpenAPISwift
 
 let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
 
-class HomePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class HomePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     @IBOutlet weak var newHitsPlaylistTableView: UITableView!
+    @IBOutlet weak var newAlbumCollectionView: UICollectionView!
     
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
+    
+    let albumList = [AlbumData(name: "AAAAAAAAAAAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada")]
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,28 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }
+        
+        self.newAlbumCollectionView.delegate = self
+        self.newAlbumCollectionView.dataSource = self
+        self.newHitsPlaylistTableView.delegate = self
+        self.newHitsPlaylistTableView.dataSource = self
+        
         self.view.backgroundColor = UIColor.black
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return albumList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "album", for: indexPath) as! AlbumCollectionViewCell
+        let albumDat = self.albumList[indexPath.row]
+        
+        cell.albumName.text = albumDat.albumName
+        cell.albumImage.image = UIImage(named: "album_default")!
+        cell.albumImage.clipsToBounds = true
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

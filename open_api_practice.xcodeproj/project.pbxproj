@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05274C0437665B233AE566ED /* Pods_open_api_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4C1FB9976DF19E8C5FDE15 /* Pods_open_api_practice.framework */; };
 		27B046BF64A25629032BA22A /* Pods_open_api_practiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125220680522546FBD32E9B7 /* Pods_open_api_practiceUITests.framework */; };
+		88F2A801223B633D00C58113 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2A800223B633D00C58113 /* AlbumCollectionViewCell.swift */; };
 		8D2C96DD21FB14B2007DCAEA /* SongTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DC21FB14B2007DCAEA /* SongTrackTableViewCell.swift */; };
 		8D2C96DF21FB15AA007DCAEA /* SongTrackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DE21FB15AA007DCAEA /* SongTrackTableViewController.swift */; };
 		C87C500621F1750C00949394 /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500321F1750C00949394 /* PlaylistTableViewCell.swift */; };
@@ -37,6 +38,7 @@
 		125220680522546FBD32E9B7 /* Pods_open_api_practiceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_open_api_practiceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4C1FB9976DF19E8C5FDE15 /* Pods_open_api_practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_open_api_practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4455DBBA4E949C35F5609400 /* Pods-open_api_practiceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practiceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practiceUITests/Pods-open_api_practiceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		88F2A800223B633D00C58113 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		8D2C96DC21FB14B2007DCAEA /* SongTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTrackTableViewCell.swift; sourceTree = "<group>"; };
 		8D2C96DE21FB15AA007DCAEA /* SongTrackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTrackTableViewController.swift; sourceTree = "<group>"; };
 		8F7F60F7037E84A608C5BB8F /* Pods-open_api_practiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practiceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practiceUITests/Pods-open_api_practiceUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				C8B7DE0021DF0C480037240A /* AppDelegate.swift */,
+				88F2A800223B633D00C58113 /* AlbumCollectionViewCell.swift */,
 				C8B7DE0221DF0C480037240A /* HomePageViewController.swift */,
 				C87C500321F1750C00949394 /* PlaylistTableViewCell.swift */,
 				8D2C96DE21FB15AA007DCAEA /* SongTrackTableViewController.swift */,
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F2A801223B633D00C58113 /* AlbumCollectionViewCell.swift in Sources */,
 				8D2C96DD21FB14B2007DCAEA /* SongTrackTableViewCell.swift in Sources */,
 				C87C500A21F1C1C400949394 /* GetPlaylistsData.swift in Sources */,
 				8D2C96DF21FB15AA007DCAEA /* SongTrackTableViewController.swift in Sources */,

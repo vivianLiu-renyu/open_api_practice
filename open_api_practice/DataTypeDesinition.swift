@@ -9,6 +9,29 @@ class SongTracksAPIData {
     var songTracksArray: [SongTrackData]? = nil
 }
 
+class AlbumsAPIData {
+    var songTracksArray: [SongTrackData]? = nil
+}
+
+class AlbumData {
+    var albumName = ""
+    var albumImageUrl = ""
+    var albumURL = ""
+    var albumID = ""
+    
+    init() {
+        albumName = ""
+        albumImageUrl = ""
+        albumID = ""
+    }
+    
+    init(name: String, url: String, id : String) {
+        albumName = name
+        albumImageUrl = url
+        albumID = id
+    }
+}
+
 class PlaylistData {
     var playlistName = ""
     var playlistImageUrl = ""
