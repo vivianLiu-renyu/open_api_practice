@@ -37,3 +37,18 @@ class GetSongTracksData: NSObject {
         return songTracks
     }
 }
+
+class GetNewAlbumsData: NSObject {
+    static func initNewAlbumsData(_ newAlbums: AlbumsAPIData) -> AlbumsAPIData {
+        var newAlbumsList: KKAlbumList
+        
+        newAlbums.albumsArray = []
+        newAlbumsList = getNewAlbums(territory: .taiwan, limit: 2).albums!
+        
+        for i in 0..<10 {
+            newAlbums.albumsArray?.append(setAlbumsInfo(as: newAlbumsList.albums[i]))
+        }
+
+        return newAlbums
+    }
+}

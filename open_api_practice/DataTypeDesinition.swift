@@ -10,13 +10,12 @@ class SongTracksAPIData {
 }
 
 class AlbumsAPIData {
-    var songTracksArray: [SongTrackData]? = nil
+    var albumsArray: [AlbumData]? = nil
 }
 
 class AlbumData {
     var albumName = ""
     var albumImageUrl = ""
-    var albumURL = ""
     var albumID = ""
     
     init() {
@@ -96,4 +95,20 @@ func setSongTrackInfo(as info: KKTrackInfo) -> SongTrackData {
     songTrackData.songCoverURL = ((info.album?.images[2].url)?.absoluteString)!
     
     return songTrackData
+}
+
+func getNewAlbums(territory: KKTerritory, limit: Int) -> KKNewReleasedAlbumsCategory {
+    let newAlbumsList = DataAPI().getNewAlbums(territory: territory, limit: limit)
+    
+    return newAlbumsList
+}
+
+func setAlbumsInfo(as info: KKAlbumInfo) -> AlbumData {
+    let albumData = AlbumData()
+    
+    albumData.albumID = info.ID
+    albumData.albumName = info.name
+    albumData.albumImageUrl = ((info.images[2].url)?.absoluteString)!
+    
+    return albumData
 }
