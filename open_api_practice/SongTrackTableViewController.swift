@@ -55,4 +55,14 @@ class SongTrackTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func openSortMenu(_ sender: Any) {
+        handleMore()
+    }
+    
+    let settingsLauncher = SettingsLauncher()
+    
+    func handleMore() {
+        settingsLauncher.showSettings()
+    }
 }

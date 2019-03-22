@@ -256,7 +256,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" leftItemsSupplementBackButton="YES" id="haA-0g-leJ">
-                        <barButtonItem key="rightBarButtonItem" title="Sort" id="oMZ-Dv-yQ0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="oMZ-Dv-yQ0">
+                            <connections>
+                                <action selector="openSortMenu:" destination="XO2-eI-jOu" id="puE-mS-sp3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGf-ua-THT" userLabel="First Responder" sceneMemberID="firstResponder"/>
