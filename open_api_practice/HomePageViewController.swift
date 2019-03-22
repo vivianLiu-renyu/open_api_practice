@@ -10,8 +10,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
-    
-    let albumList = [AlbumData(name: "AAAAAAAAAAAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada"), AlbumData(name: "AAAAA", url: "" ,id: "adada")]
+    var newAlbumsList: AlbumsAPIData = AlbumsAPIData()
+    var newAlbumData: [AlbumData] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +26,16 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         
         DispatchQueue.global().async {
             self.playlistsList = GetPlaylistsData.initNewHitsPlaylistData(self.playlistsList)
+            self.newAlbumsList = GetNewAlbumsData.initNewAlbumsData(self.newAlbumsList)
             DispatchQueue.main.async {
                 if let playlistDat = self.playlistsList.playlistArray {
                     self.playlistData = playlistDat
                     self.newHitsPlaylistTableView.reloadData()
+                }
+                
+                if let albumDat = self.newAlbumsList.albumsArray {
+                    self.newAlbumData = albumDat
+                    self.newAlbumCollectionView.reloadData()
                 }
             }
         }
@@ -43,16 +49,30 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return albumList.count
+        return newAlbumData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "album", for: indexPath) as! AlbumCollectionViewCell
-        let albumDat = self.albumList[indexPath.row]
+        let albumDat = self.newAlbumData[indexPath.row]
         
         cell.albumName.text = albumDat.albumName
-        cell.albumImage.image = UIImage(named: "album_default")!
         cell.albumImage.clipsToBounds = true
+        
+        let albumImageAddress = albumDat.albumImageUrl
+        if let imageUrl = URL(string: albumImageAddress) {
+            DispatchQueue.global().async {
+                do{
+                    let imageData = try Data(contentsOf: imageUrl)
+                    let downloadedImage = UIImage(data: imageData)
+                    DispatchQueue.main.async {
+                        cell.albumImage.image = downloadedImage
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
         
         return cell
     }
