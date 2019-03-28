@@ -1,6 +1,14 @@
 import UIKit
 
-class SettingsLauncher: NSObject {
+class Setting: NSObject {
+    let name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     let blackView = UIView()
     
     let collectionView: UICollectionView = {
@@ -9,6 +17,13 @@ class SettingsLauncher: NSObject {
         cv.backgroundColor = UIColor.white
         
         return cv
+    }()
+    
+    let cellId = "cellId"
+    let cellHeight: CGFloat = 50
+    
+    let settings: [Setting] = {
+        return [Setting(name: "Sort By Release Date"), Setting(name: "Sort By Artist Name"), Setting(name: "Sort By Song Name"), Setting(name: "Cancel")]
     }()
     
     func showSettings() {
@@ -21,7 +36,7 @@ class SettingsLauncher: NSObject {
             window.addSubview(blackView)
             window.addSubview(collectionView)
             
-            let height:CGFloat = 200
+            let height:CGFloat = CGFloat(settings.count) * cellHeight
             let y = window.frame.height - height
             collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
             
@@ -45,7 +60,29 @@ class SettingsLauncher: NSObject {
         })
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return settings.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SettingCell
+        
+        let setting = settings[indexPath.item]
+        cell.setting = setting
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: cellHeight)
+    }
+    
     override init() {
         super.init()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.register(SettingCell.self, forCellWithReuseIdentifier: cellId)
     }
 }
