@@ -13,6 +13,8 @@
 		8D2C96DD21FB14B2007DCAEA /* SongTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DC21FB14B2007DCAEA /* SongTrackTableViewCell.swift */; };
 		8D2C96DF21FB15AA007DCAEA /* SongTrackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DE21FB15AA007DCAEA /* SongTrackTableViewController.swift */; };
 		8D52C2DD22448CCE00D63D6C /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52C2DC22448CCE00D63D6C /* SettingsLauncher.swift */; };
+		8D52C2DF224494EC00D63D6C /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52C2DE224494EC00D63D6C /* SettingCell.swift */; };
+		8D52C2E1224496FF00D63D6C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52C2E0224496FF00D63D6C /* Extensions.swift */; };
 		C87C500621F1750C00949394 /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500321F1750C00949394 /* PlaylistTableViewCell.swift */; };
 		C87C500721F1750C00949394 /* DataTypeDesinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500421F1750C00949394 /* DataTypeDesinition.swift */; };
 		C87C500A21F1C1C400949394 /* GetPlaylistsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500921F1C1C400949394 /* GetPlaylistsData.swift */; };
@@ -43,6 +45,8 @@
 		8D2C96DC21FB14B2007DCAEA /* SongTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTrackTableViewCell.swift; sourceTree = "<group>"; };
 		8D2C96DE21FB15AA007DCAEA /* SongTrackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTrackTableViewController.swift; sourceTree = "<group>"; };
 		8D52C2DC22448CCE00D63D6C /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		8D52C2DE224494EC00D63D6C /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		8D52C2E0224496FF00D63D6C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8F7F60F7037E84A608C5BB8F /* Pods-open_api_practiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practiceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practiceUITests/Pods-open_api_practiceUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91604A68EC287DDD95DEAF78 /* Pods-open_api_practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practice.release.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practice/Pods-open_api_practice.release.xcconfig"; sourceTree = "<group>"; };
 		98CDB0A569FBFFE8F66C08D6 /* Pods-open_api_practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practice/Pods-open_api_practice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				8D52C2DB22448CAA00D63D6C /* Controller */,
 				8D52C2DA22448CA100D63D6C /* View */,
 				C8B7DE0021DF0C480037240A /* AppDelegate.swift */,
+				8D52C2DE224494EC00D63D6C /* SettingCell.swift */,
 				88F2A800223B633D00C58113 /* AlbumCollectionViewCell.swift */,
 				C8B7DE0221DF0C480037240A /* HomePageViewController.swift */,
 				C87C500321F1750C00949394 /* PlaylistTableViewCell.swift */,
@@ -155,6 +160,7 @@
 				C87C500B21F2041200949394 /* DataAPI.swift */,
 				C87C500421F1750C00949394 /* DataTypeDesinition.swift */,
 				C87C500921F1C1C400949394 /* GetPlaylistsData.swift */,
+				8D52C2E0224496FF00D63D6C /* Extensions.swift */,
 			);
 			path = open_api_practice;
 			sourceTree = "<group>";
@@ -335,8 +341,10 @@
 				8D2C96DD21FB14B2007DCAEA /* SongTrackTableViewCell.swift in Sources */,
 				C87C500A21F1C1C400949394 /* GetPlaylistsData.swift in Sources */,
 				8D2C96DF21FB15AA007DCAEA /* SongTrackTableViewController.swift in Sources */,
+				8D52C2DF224494EC00D63D6C /* SettingCell.swift in Sources */,
 				C8B7DE0321DF0C480037240A /* HomePageViewController.swift in Sources */,
 				C87C500721F1750C00949394 /* DataTypeDesinition.swift in Sources */,
+				8D52C2E1224496FF00D63D6C /* Extensions.swift in Sources */,
 				8D52C2DD22448CCE00D63D6C /* SettingsLauncher.swift in Sources */,
 				C8B7DE0121DF0C480037240A /* AppDelegate.swift in Sources */,
 				C87C500621F1750C00949394 /* PlaylistTableViewCell.swift in Sources */,
