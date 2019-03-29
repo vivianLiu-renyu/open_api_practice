@@ -33,10 +33,11 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                 if let playlistDat = self.playlistsList.playlistArray {
                     self.playlistData = playlistDat
                     self.newHitsPlaylistTableView.reloadData()
-                    self.newHitsPlaylistTableView.layoutIfNeeded()
                     
+                    let numberOfCell = self.newHitsPlaylistTableView.numberOfRows(inSection: 0)
+                    let heightOfCell = self.newHitsPlaylistTableView.cellForRow(at: [0,0])?.frame.size.height
+                    self.newHitsPlaylistTableView.frame = CGRect(x: self.newHitsPlaylistTableView.frame.origin.x, y: self.newHitsPlaylistTableView.frame.origin.y, width: self.newHitsPlaylistTableView.frame.size.width, height: CGFloat(numberOfCell) * heightOfCell!)
                     
-                    self.newHitsPlaylistTableView.frame = CGRect(x: self.newHitsPlaylistTableView.frame.origin.x, y: self.newHitsPlaylistTableView.frame.origin.y, width: self.newHitsPlaylistTableView.frame.size.width, height: self.newHitsPlaylistTableView.contentSize.height)
                     self.scrollView.contentSize = CGSize(width: 0, height: self.newHitsPlaylistTableView.frame.maxY)
                 }
                 
