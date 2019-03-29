@@ -28,13 +28,13 @@ class NewHitsPlaylistTest: XCTestCase {
     }
 
     func testNewHitsPlaylistsHaveTwenty() {
-        let playlists = XCUIAPP.tables.cells.matching(identifier: "new_hits_playlist")
+        let playlists = XCUIAPP.tables.cells.matching(NSPredicate(format: "identifier BEGINSWITH %@", "New Hits Playlist Cell"))
         XCTAssert(playlists.count == 20)
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testNewHitsPlaylistsHavePlaylistinformation() {
-        let playlistname = XCUIAPP.tables.cells.matching(identifier: "new_hits_playlist")
+        let playlistname = XCUIAPP.tables.cells.matching(NSPredicate(format: "identifier BEGINSWITH %@", "New Hits Playlist Cell"))
         XCTAssert(playlistname.element(boundBy: 0).staticTexts.matching(identifier: "playlist_name").element(boundBy: 0).label != "" )
         XCTAssert(playlistname.element(boundBy: 0).staticTexts.matching(identifier: "curator_name").element(boundBy: 0).label != "" )
         XCTAssert(playlistname.element(boundBy: 0).images.matching(identifier: "playlist_cover").element(boundBy: 0).exists == true )

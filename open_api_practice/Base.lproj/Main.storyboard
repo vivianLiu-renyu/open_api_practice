@@ -66,9 +66,6 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="cBP-BQ-9At" secondAttribute="trailing" constant="16" id="sVU-5L-go5"/>
                                             <constraint firstItem="jCa-LM-BHy" firstAttribute="leading" secondItem="2c9-VH-Z8k" secondAttribute="leading" constant="20" id="zBT-qe-Rda"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new_album"/>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="albumImage" destination="jCa-LM-BHy" id="THn-52-pvB"/>
                                             <outlet property="albumName" destination="cBP-BQ-9At" id="Nyv-0E-rf6"/>
@@ -151,9 +148,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new_hits_playlist"/>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="curatorImage" destination="Bof-hK-Vza" id="esT-OI-geH"/>
                                             <outlet property="curatorName" destination="08q-6c-8Nl" id="d06-uC-tcc"/>
