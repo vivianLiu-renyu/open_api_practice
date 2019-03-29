@@ -6,7 +6,7 @@ class SongTrackTableViewController: UITableViewController {
     var playlistName: String = ""
     var territory: KKTerritory!
     var songTracksList: SongTracksAPIData = SongTracksAPIData()
-    var songTrackData: [SongTrackData] = []
+    var songTracksData: [SongTrackData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +15,7 @@ class SongTrackTableViewController: UITableViewController {
             self.songTracksList = GetSongTracksData.initSongTracksData(self.songTracksList, playlistID: self.playlistID, territory: self.territory)
             DispatchQueue.main.async {
                 if let songTrackDat = self.songTracksList.songTracksArray {
-                    self.songTrackData = songTrackDat
+                    self.songTracksData = songTrackDat
                     self.tableView.reloadData()
                 }
             }
@@ -25,16 +25,16 @@ class SongTrackTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songTrackData.count
+        return songTracksData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "songTrack", for: indexPath) as! SongTrackTableViewCell
 
-        cell.songName.text = songTrackData[indexPath.row].songName
-        cell.artistName.text = songTrackData[indexPath.row].artistName
+        cell.songName.text = songTracksData[indexPath.row].songName
+        cell.artistName.text = songTracksData[indexPath.row].artistName
         
-        let songTrackImageAddress = songTrackData[indexPath.row].songCoverURL
+        let songTrackImageAddress = songTracksData[indexPath.row].songCoverURL
         if let imageUrl = URL(string: songTrackImageAddress) {
             DispatchQueue.global().async {
                 do{
@@ -75,9 +75,15 @@ class SongTrackTableViewController: UITableViewController {
         case "Sort By Release Date":
             print("Sort By Release Date")
         case "Sort By Artist Name":
-            print("Sort By Artist Name")
+            songTracksData.sort{
+                ($0.artistName) < ($1.artistName)
+            }
+            self.tableView.reloadData()
         case "Sort By Song Name":
-            print("Sort By Song Name")
+            songTracksData.sort{
+                ($0.songName) < ($1.songName)
+            }
+            self.tableView.reloadData()
         default:
             print("Nothing")
         }
