@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kya-8V-GUO">
-                                <rect key="frame" x="0.0" y="81" width="414" height="774"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" indicatorStyle="white" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kya-8V-GUO">
+                                <rect key="frame" x="-20" y="81" width="414" height="774"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="最新專輯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whf-ye-ooh" userLabel="New Album Section">
                                         <rect key="frame" x="8" y="13" width="398" height="24"/>
@@ -186,9 +185,19 @@
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="dyH-VI-eMg"/>
+                                    <constraint firstAttribute="height" constant="774" id="hDY-UZ-0I2"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kya-8V-GUO" firstAttribute="top" secondItem="bsl-hU-Rjb" secondAttribute="top" id="TKu-rC-1kQ"/>
+                            <constraint firstItem="kya-8V-GUO" firstAttribute="leading" secondItem="bsl-hU-Rjb" secondAttribute="leading" id="bHZ-9K-PDm"/>
+                            <constraint firstItem="kya-8V-GUO" firstAttribute="width" secondItem="bsl-hU-Rjb" secondAttribute="width" id="g2z-OJ-dmo"/>
+                            <constraint firstItem="kya-8V-GUO" firstAttribute="trailing" secondItem="bsl-hU-Rjb" secondAttribute="trailing" id="sTc-BE-pOK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bsl-hU-Rjb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="VWc-fA-3LK"/>

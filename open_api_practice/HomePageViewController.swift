@@ -14,8 +14,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     var newAlbumsList: AlbumsAPIData = AlbumsAPIData()
     var newAlbumData: [AlbumData] = []
         
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
 
         _ = try? API.fetchAccessTokenByClientCredential { result in
             switch result {
@@ -84,6 +84,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }
+        
+        cell.albumImage.layer.cornerRadius = 5
         
         return cell
     }
