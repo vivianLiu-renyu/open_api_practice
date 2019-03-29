@@ -60,9 +60,26 @@ class SongTrackTableViewController: UITableViewController {
         handleMore()
     }
     
-    let settingsLauncher = SettingsLauncher()
+    lazy var settingsLauncher: SettingsLauncher = {
+        let launcher = SettingsLauncher()
+        launcher.songTrackController = self
+        return launcher
+    }()
     
     func handleMore() {
         settingsLauncher.showSettings()
+    }
+    
+    func sort(by method: Setting) {
+        switch method.name {
+        case "Sort By Release Date":
+            print("Sort By Release Date")
+        case "Sort By Artist Name":
+            print("Sort By Artist Name")
+        case "Sort By Song Name":
+            print("Sort By Song Name")
+        default:
+            print("Nothing")
+        }
     }
 }

@@ -16,6 +16,13 @@ class BaseCell: UICollectionViewCell {
 }
 
 class SettingCell: BaseCell {
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? UIColor.darkGray : UIColor.white
+            nameLabel.textColor = isHighlighted ? UIColor.white : UIColor.black
+        }
+    }
+    
     var setting: Setting? {
         didSet {
             nameLabel.text = setting?.name

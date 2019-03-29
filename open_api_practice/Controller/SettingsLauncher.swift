@@ -26,6 +26,8 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
         return [Setting(name: "Sort By Release Date"), Setting(name: "Sort By Artist Name"), Setting(name: "Sort By Song Name"), Setting(name: "Cancel")]
     }()
     
+    var songTrackController: SongTrackTableViewController?
+    
     func showSettings() {
         if let window = UIApplication.shared.keyWindow{
             
@@ -75,6 +77,26 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.blackView.alpha = 0
+            
+            if let window = UIApplication.shared.keyWindow{
+                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+            }
+        }) { (completed: Bool) in
+            let setting = self.settings[indexPath.item]
+            if setting.name != "Cancel" {
+                self.songTrackController?.sort(by: setting)
+            }
+        }
     }
     
     override init() {
