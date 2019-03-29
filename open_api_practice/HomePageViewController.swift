@@ -3,10 +3,11 @@ import KKBOXOpenAPISwift
 
 let API = KKBOXOpenAPI(clientID: "f83d449bf6233c25b73330413dcb313b", secret: "bbe1d1310eb22e2d6c4517c4a5907e09")
 
-class HomePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     @IBOutlet weak var newHitsPlaylistTableView: UITableView!
     @IBOutlet weak var newAlbumCollectionView: UICollectionView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var playlistsList: PlaylistsAPIData = PlaylistsAPIData()
     var playlistData: [PlaylistData] = []
@@ -27,10 +28,16 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         DispatchQueue.global().async {
             self.playlistsList = GetPlaylistsData.initNewHitsPlaylistData(self.playlistsList)
             self.newAlbumsList = GetNewAlbumsData.initNewAlbumsData(self.newAlbumsList)
+            
             DispatchQueue.main.async {
                 if let playlistDat = self.playlistsList.playlistArray {
                     self.playlistData = playlistDat
                     self.newHitsPlaylistTableView.reloadData()
+                    self.newHitsPlaylistTableView.layoutIfNeeded()
+                    
+                    
+                    self.newHitsPlaylistTableView.frame = CGRect(x: self.newHitsPlaylistTableView.frame.origin.x, y: self.newHitsPlaylistTableView.frame.origin.y, width: self.newHitsPlaylistTableView.frame.size.width, height: self.newHitsPlaylistTableView.contentSize.height)
+                    self.scrollView.contentSize = CGSize(width: 0, height: self.newHitsPlaylistTableView.frame.maxY)
                 }
                 
                 if let albumDat = self.newAlbumsList.albumsArray {
@@ -40,10 +47,12 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         
+        self.scrollView.delegate = self
         self.newAlbumCollectionView.delegate = self
         self.newAlbumCollectionView.dataSource = self
         self.newHitsPlaylistTableView.delegate = self
         self.newHitsPlaylistTableView.dataSource = self
+
         
         self.view.backgroundColor = UIColor.black
     }
@@ -122,25 +131,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         }
         cell.curatorImage.layer.cornerRadius = cell.curatorImage.frame.height/2
         cell.curatorImage.clipsToBounds = true
-        
+       
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 45
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        let sectionTitle = UILabel(frame: CGRect(x: 30, y: 10, width:
-            tableView.bounds.size.width, height: tableView.bounds.size.height))
-        sectionTitle.font = UIFont(name: "Test", size: 30)
-        sectionTitle.text = "熱門歌單"
-        sectionTitle.sizeToFit()
-        sectionTitle.textColor = UIColor.white
-        headerView.addSubview(sectionTitle)
-        
-        return headerView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
