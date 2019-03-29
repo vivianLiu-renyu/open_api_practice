@@ -58,6 +58,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.albumName.text = albumDat.albumName
         cell.albumImage.clipsToBounds = true
+        cell.accessibilityIdentifier = "New Album Cell \(indexPath.row)"
         
         let albumImageAddress = albumDat.albumImageUrl
         if let imageUrl = URL(string: albumImageAddress) {
@@ -85,6 +86,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "playlist", for: indexPath) as! PlaylistTableViewCell
         let playlistDat = self.playlistData[indexPath.row]
         cell.displayContent(with: playlistDat)
+        cell.accessibilityIdentifier = "New Hits Playlist Cell \(indexPath.row)"
         
         let playlistImageAddress = playlistData[indexPath.row].playlistImageUrl
         if let imageUrl = URL(string: playlistImageAddress) {
