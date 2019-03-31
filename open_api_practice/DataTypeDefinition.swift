@@ -53,11 +53,13 @@ class SongTrackData {
     var songName = ""
     var artistName = ""
     var songCoverURL = ""
+    var releaseDate = ""
     
     init() {
         songName = ""
         artistName = ""
         songCoverURL = ""
+        releaseDate = ""
     }
 }
 
@@ -93,6 +95,7 @@ func setSongTrackInfo(as info: KKTrackInfo) -> SongTrackData {
     songTrackData.songName = info.name
     songTrackData.artistName = (info.album?.artist?.name)!
     songTrackData.songCoverURL = ((info.album?.images[2].url)?.absoluteString)!
+    songTrackData.releaseDate = (info.album?.releaseDate)!
     
     return songTrackData
 }

@@ -16,7 +16,7 @@
 		8D52C2DF224494EC00D63D6C /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52C2DE224494EC00D63D6C /* SettingCell.swift */; };
 		8D52C2E1224496FF00D63D6C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52C2E0224496FF00D63D6C /* Extensions.swift */; };
 		C87C500621F1750C00949394 /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500321F1750C00949394 /* PlaylistTableViewCell.swift */; };
-		C87C500721F1750C00949394 /* DataTypeDesinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500421F1750C00949394 /* DataTypeDesinition.swift */; };
+		C87C500721F1750C00949394 /* DataTypeDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500421F1750C00949394 /* DataTypeDefinition.swift */; };
 		C87C500A21F1C1C400949394 /* GetPlaylistsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500921F1C1C400949394 /* GetPlaylistsData.swift */; };
 		C87C500C21F2041200949394 /* DataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500B21F2041200949394 /* DataAPI.swift */; };
 		C8B7DE0121DF0C480037240A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7DE0021DF0C480037240A /* AppDelegate.swift */; };
@@ -51,7 +51,7 @@
 		91604A68EC287DDD95DEAF78 /* Pods-open_api_practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practice.release.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practice/Pods-open_api_practice.release.xcconfig"; sourceTree = "<group>"; };
 		98CDB0A569FBFFE8F66C08D6 /* Pods-open_api_practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practice/Pods-open_api_practice.debug.xcconfig"; sourceTree = "<group>"; };
 		C87C500321F1750C00949394 /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
-		C87C500421F1750C00949394 /* DataTypeDesinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTypeDesinition.swift; sourceTree = "<group>"; };
+		C87C500421F1750C00949394 /* DataTypeDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTypeDefinition.swift; sourceTree = "<group>"; };
 		C87C500921F1C1C400949394 /* GetPlaylistsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaylistsData.swift; sourceTree = "<group>"; };
 		C87C500B21F2041200949394 /* DataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAPI.swift; sourceTree = "<group>"; };
 		C8B7DDFD21DF0C480037240A /* open_api_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = open_api_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +158,7 @@
 				C8B7DE0921DF0C490037240A /* LaunchScreen.storyboard */,
 				C8B7DE0C21DF0C490037240A /* Info.plist */,
 				C87C500B21F2041200949394 /* DataAPI.swift */,
-				C87C500421F1750C00949394 /* DataTypeDesinition.swift */,
+				C87C500421F1750C00949394 /* DataTypeDefinition.swift */,
 				C87C500921F1C1C400949394 /* GetPlaylistsData.swift */,
 				8D52C2E0224496FF00D63D6C /* Extensions.swift */,
 			);
@@ -343,7 +343,7 @@
 				8D2C96DF21FB15AA007DCAEA /* SongTrackTableViewController.swift in Sources */,
 				8D52C2DF224494EC00D63D6C /* SettingCell.swift in Sources */,
 				C8B7DE0321DF0C480037240A /* HomePageViewController.swift in Sources */,
-				C87C500721F1750C00949394 /* DataTypeDesinition.swift in Sources */,
+				C87C500721F1750C00949394 /* DataTypeDefinition.swift in Sources */,
 				8D52C2E1224496FF00D63D6C /* Extensions.swift in Sources */,
 				8D52C2DD22448CCE00D63D6C /* SettingsLauncher.swift in Sources */,
 				C8B7DE0121DF0C480037240A /* AppDelegate.swift in Sources */,
