@@ -33,6 +33,7 @@ class SongTrackTableViewController: UITableViewController {
 
         cell.songName.text = songTracksData[indexPath.row].songName
         cell.artistName.text = songTracksData[indexPath.row].artistName
+        cell.releaseDate.text = songTracksData[indexPath.row].releaseDate
         
         let songTrackImageAddress = songTracksData[indexPath.row].songCoverURL
         if let imageUrl = URL(string: songTrackImageAddress) {
@@ -73,7 +74,10 @@ class SongTrackTableViewController: UITableViewController {
     func sort(by method: Setting) {
         switch method.name {
         case "Sort By Release Date":
-            print("Sort By Release Date")
+            songTracksData.sort{
+                ($0.releaseDate) > ($1.releaseDate)
+            }
+            self.tableView.reloadData()
         case "Sort By Artist Name":
             songTracksData.sort{
                 ($0.artistName) < ($1.artistName)

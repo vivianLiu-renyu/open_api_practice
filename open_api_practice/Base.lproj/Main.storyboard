@@ -220,11 +220,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songTrack" rowHeight="95" id="puz-ac-cfN" customClass="SongTrackTableViewCell" customModule="open_api_practice" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="95"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songTrack" rowHeight="106" id="puz-ac-cfN" customClass="SongTrackTableViewCell" customModule="open_api_practice" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="puz-ac-cfN" id="wT6-kl-rD4">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="94.666666666666671"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="puz-ac-cfN" id="wT6-kl-rD4">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌曲名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS0-AJ-MVN">
@@ -234,7 +234,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌手名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbS-ch-Z3h">
-                                            <rect key="frame" x="111" y="63.999999999999993" width="279" height="19.666666666666664"/>
+                                            <rect key="frame" x="111" y="64" width="190" height="19.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="190" id="6th-51-ksJ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -246,23 +249,30 @@
                                                 <constraint firstAttribute="width" constant="72" id="Pf4-Fy-Siu"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="發行日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mw3-CQ-fUT">
+                                            <rect key="frame" x="332.66666666666669" y="74" width="57.333333333333314" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="JbS-ch-Z3h" secondAttribute="trailing" constant="4" id="3HK-Xv-cmf"/>
                                         <constraint firstItem="GgT-CS-Rm0" firstAttribute="leading" secondItem="wT6-kl-rD4" secondAttribute="leadingMargin" constant="4" id="4WM-q7-Qp9"/>
                                         <constraint firstItem="oS0-AJ-MVN" firstAttribute="trailing" secondItem="wT6-kl-rD4" secondAttribute="trailingMargin" constant="4" id="4Xx-W6-rne"/>
                                         <constraint firstItem="JbS-ch-Z3h" firstAttribute="leading" secondItem="GgT-CS-Rm0" secondAttribute="trailing" constant="15" id="71O-bW-uvO"/>
+                                        <constraint firstItem="mw3-CQ-fUT" firstAttribute="top" secondItem="oS0-AJ-MVN" secondAttribute="bottom" constant="25" id="9DI-Xq-pbq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mw3-CQ-fUT" secondAttribute="trailing" constant="4" id="JTZ-CZ-Qau"/>
                                         <constraint firstItem="oS0-AJ-MVN" firstAttribute="leading" secondItem="GgT-CS-Rm0" secondAttribute="trailing" constant="15" id="VOJ-1l-dNs"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="GgT-CS-Rm0" secondAttribute="bottom" constant="4" id="f8b-rn-2Th"/>
                                         <constraint firstItem="GgT-CS-Rm0" firstAttribute="top" secondItem="wT6-kl-rD4" secondAttribute="topMargin" constant="4" id="jjG-Ox-Pum"/>
                                         <constraint firstItem="JbS-ch-Z3h" firstAttribute="top" secondItem="oS0-AJ-MVN" secondAttribute="bottom" constant="15" id="pRd-wE-Lwg"/>
                                         <constraint firstItem="oS0-AJ-MVN" firstAttribute="top" secondItem="wT6-kl-rD4" secondAttribute="topMargin" constant="15" id="prj-xc-k4P"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="JbS-ch-Z3h" secondAttribute="bottom" constant="15" id="uJ1-lm-hae"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="artistName" destination="JbS-ch-Z3h" id="Lpa-vw-Esd"/>
+                                    <outlet property="releaseDate" destination="mw3-CQ-fUT" id="nFf-Qu-1g4"/>
                                     <outlet property="songImage" destination="GgT-CS-Rm0" id="RqC-dV-dZw"/>
                                     <outlet property="songName" destination="oS0-AJ-MVN" id="rIO-15-IKv"/>
                                 </connections>
@@ -283,7 +293,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGf-ua-THT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-698" y="-553"/>
+            <point key="canvasLocation" x="-698.55072463768124" y="-553.125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Ta-fx-EMn">
