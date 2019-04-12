@@ -100,8 +100,8 @@ func setSongTrackInfo(as info: KKTrackInfo) -> SongTrackData {
     return songTrackData
 }
 
-func getNewAlbums(territory: KKTerritory, limit: Int) -> KKNewReleasedAlbumsCategory {
-    let newAlbumsList = DataAPI().getNewAlbums(territory: territory, limit: limit)
+func getNewAlbums(territory: KKTerritory, offset: Int) -> KKNewReleasedAlbumsCategory {
+    let newAlbumsList = DataAPI().getNewAlbums(territory: territory, offset: offset)
     
     return newAlbumsList
 }

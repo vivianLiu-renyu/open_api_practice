@@ -27,7 +27,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         
         DispatchQueue.global().async {
             self.playlistsList = GetPlaylistsData.initNewHitsPlaylistData(self.playlistsList)
-            self.newAlbumsList = GetNewAlbumsData.initNewAlbumsData(self.newAlbumsList)
+            self.newAlbumsList = GetNewAlbumsData.initNewAlbumsData(self.newAlbumsList, offset: 0, homePage: true)
             
             DispatchQueue.main.async {
                 if let playlistDat = self.playlistsList.playlistArray {
@@ -157,6 +157,12 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             nextPage.playlistID = playlistID
             nextPage.territory = .taiwan
             print("nextPage.playlistName: ", playlistName)
+        }
+        
+        if (segue.identifier == "newAlbumList") {
+            let nextPage = segue.destination as! AlbumListCollectionViewController
+
+            print("NewAlbum")
         }
     }
 }
