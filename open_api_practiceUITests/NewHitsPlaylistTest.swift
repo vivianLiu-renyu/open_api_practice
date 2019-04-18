@@ -28,7 +28,7 @@ class NewHitsPlaylistTest: XCTestCase {
     }
 
     func testNewHitsPlaylistsHaveTwenty() {
-        let playlists = XCUIAPP.tables.cells.matching(NSPredicate(format: "identifier BEGINSWITH %@", "New Hits Playlist Cell"))
+                let playlists = XCUIAPP.tables.cells.matching(NSPredicate(format: "identifier BEGINSWITH %@", "New Hits Playlist Cell"))
         XCTAssert(playlists.count == 20)
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
