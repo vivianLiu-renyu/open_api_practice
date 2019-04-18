@@ -680,7 +680,7 @@ extension KKBOXOpenAPI {
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(newReleasedAlbumsUnderCategory ID: String, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 100, callback: @escaping (_ result: KKAPIResult<KKNewReleasedAlbumsCategory>) -> ()) throws -> URLSessionTask {
-		let urlString = "\(KKBOXAPIPath)new-release-categories/\(escape(ID))/albums?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		let urlString = "\(KKBOXAPIPath)new-release-categories/\(escape(ID))?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
 }
