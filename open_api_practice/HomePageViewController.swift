@@ -27,7 +27,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         
         DispatchQueue.global().async {
             self.playlistsList = GetPlaylistsData.initNewHitsPlaylistData(self.playlistsList)
-            self.newAlbumsList = GetNewAlbumsData.initNewAlbumsData(self.newAlbumsList, offset: 0, homePage: true)
+            self.newAlbumsList = GetNewAlbumsData.initNewAlbumsData(self.newAlbumsList, offset: 0, limit: 10)
             
             DispatchQueue.main.async {
                 if let playlistDat = self.playlistsList.playlistArray {
