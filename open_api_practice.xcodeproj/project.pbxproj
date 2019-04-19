@@ -11,6 +11,7 @@
 		27B046BF64A25629032BA22A /* Pods_open_api_practiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125220680522546FBD32E9B7 /* Pods_open_api_practiceUITests.framework */; };
 		885460E8226038E40023B10E /* AlbumListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885460E7226038E40023B10E /* AlbumListCollectionViewController.swift */; };
 		88F2A801223B633D00C58113 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2A800223B633D00C58113 /* AlbumCollectionViewCell.swift */; };
+		8D1257C822698049000F3B09 /* SongTrackSortingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1257C722698049000F3B09 /* SongTrackSortingTest.swift */; };
 		8D2C96DD21FB14B2007DCAEA /* SongTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DC21FB14B2007DCAEA /* SongTrackTableViewCell.swift */; };
 		8D2C96DF21FB15AA007DCAEA /* SongTrackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DE21FB15AA007DCAEA /* SongTrackTableViewController.swift */; };
 		8D52C2DD22448CCE00D63D6C /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52C2DC22448CCE00D63D6C /* SettingsLauncher.swift */; };
@@ -29,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8D1257C22269801A000F3B09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8B7DDF521DF0C480037240A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8B7DDFC21DF0C480037240A;
+			remoteInfo = open_api_practice;
+		};
 		C8B7DE1221DF0C490037240A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C8B7DDF521DF0C480037240A /* Project object */;
@@ -44,6 +52,9 @@
 		4455DBBA4E949C35F5609400 /* Pods-open_api_practiceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practiceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practiceUITests/Pods-open_api_practiceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		885460E7226038E40023B10E /* AlbumListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListCollectionViewController.swift; sourceTree = "<group>"; };
 		88F2A800223B633D00C58113 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		8D1257BD2269801A000F3B09 /* open_api_practiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = open_api_practiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1257C12269801A000F3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1257C722698049000F3B09 /* SongTrackSortingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTrackSortingTest.swift; sourceTree = "<group>"; };
 		8D2C96DC21FB14B2007DCAEA /* SongTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTrackTableViewCell.swift; sourceTree = "<group>"; };
 		8D2C96DE21FB15AA007DCAEA /* SongTrackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTrackTableViewController.swift; sourceTree = "<group>"; };
 		8D52C2DC22448CCE00D63D6C /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
@@ -69,6 +80,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8D1257BA2269801A000F3B09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8B7DDFA21DF0C480037240A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,6 +126,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8D1257BE2269801A000F3B09 /* open_api_practiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D1257C12269801A000F3B09 /* Info.plist */,
+				8D1257C722698049000F3B09 /* SongTrackSortingTest.swift */,
+			);
+			path = open_api_practiceTests;
+			sourceTree = "<group>";
+		};
 		8D52C2DA22448CA100D63D6C /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +155,7 @@
 			children = (
 				C8B7DDFF21DF0C480037240A /* open_api_practice */,
 				C8B7DE1421DF0C490037240A /* open_api_practiceUITests */,
+				8D1257BE2269801A000F3B09 /* open_api_practiceTests */,
 				C8B7DDFE21DF0C480037240A /* Products */,
 				1819B4926E4D69C85A60220F /* Pods */,
 				1BF49490DE01529D5C9B5B42 /* Frameworks */,
@@ -139,6 +167,7 @@
 			children = (
 				C8B7DDFD21DF0C480037240A /* open_api_practice.app */,
 				C8B7DE1121DF0C490037240A /* open_api_practiceUITests.xctest */,
+				8D1257BD2269801A000F3B09 /* open_api_practiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +209,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8D1257BC2269801A000F3B09 /* open_api_practiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D1257C62269801A000F3B09 /* Build configuration list for PBXNativeTarget "open_api_practiceTests" */;
+			buildPhases = (
+				8D1257B92269801A000F3B09 /* Sources */,
+				8D1257BA2269801A000F3B09 /* Frameworks */,
+				8D1257BB2269801A000F3B09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D1257C32269801A000F3B09 /* PBXTargetDependency */,
+			);
+			name = open_api_practiceTests;
+			productName = open_api_practiceTests;
+			productReference = 8D1257BD2269801A000F3B09 /* open_api_practiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C8B7DDFC21DF0C480037240A /* open_api_practice */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8B7DE1A21DF0C490037240A /* Build configuration list for PBXNativeTarget "open_api_practice" */;
@@ -228,6 +275,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Search_Question_Avengers;
 				TargetAttributes = {
+					8D1257BC2269801A000F3B09 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C8B7DDFC21DF0C480037240A;
+					};
 					C8B7DDFC21DF0C480037240A = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -252,11 +303,19 @@
 			targets = (
 				C8B7DDFC21DF0C480037240A /* open_api_practice */,
 				C8B7DE1021DF0C490037240A /* open_api_practiceUITests */,
+				8D1257BC2269801A000F3B09 /* open_api_practiceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8D1257BB2269801A000F3B09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8B7DDFB21DF0C480037240A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +395,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8D1257B92269801A000F3B09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D1257C822698049000F3B09 /* SongTrackSortingTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8B7DDF921DF0C480037240A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,6 +434,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8D1257C32269801A000F3B09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8B7DDFC21DF0C480037240A /* open_api_practice */;
+			targetProxy = 8D1257C22269801A000F3B09 /* PBXContainerItemProxy */;
+		};
 		C8B7DE1321DF0C490037240A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C8B7DDFC21DF0C480037240A /* open_api_practice */;
@@ -394,6 +466,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8D1257C42269801A000F3B09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = open_api_practiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.YC.open-api-practiceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/open_api_practice.app/open_api_practice";
+			};
+			name = Debug;
+		};
+		8D1257C52269801A000F3B09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = open_api_practiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.YC.open-api-practiceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/open_api_practice.app/open_api_practice";
+			};
+			name = Release;
+		};
 		C8B7DE1821DF0C490037240A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -593,6 +703,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8D1257C62269801A000F3B09 /* Build configuration list for PBXNativeTarget "open_api_practiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D1257C42269801A000F3B09 /* Debug */,
+				8D1257C52269801A000F3B09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C8B7DDF821DF0C480037240A /* Build configuration list for PBXProject "open_api_practice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
