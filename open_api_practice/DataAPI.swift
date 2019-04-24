@@ -46,29 +46,31 @@ class DataAPI: NSObject {
         return datas
     }
     
-    func getNewAlbums(territory: KKTerritory, offset: Int) -> KKNewReleasedAlbumsCategory {
-        var datas: KKNewReleasedAlbumsCategory!
+    func getNewAlbums(territory: KKTerritory, offset: Int, limit: Int) -> [String : AnyObject] {
+        var datas: [String : AnyObject]!
+        let url = "https://api.kkbox.com/v1.1/new-release-categories/KrdH2LdyUKS8z2aoxX/albums?limit=\(limit)&offset=\(offset)&territory=TW"
         let group = DispatchGroup()
+        let header = [
+            "Authorization": "Bearer gdJWBQhOE+JtZwiZxeCmRg==",
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        ]
 
         group.enter()
-        
-//        let url = "https://api.kkbox.com/v1.1/new-release-categories/KrdH2LdyUKS8z2aoxX?territory=TW&offset=\(offset)&limit=50"
-//        let
-//        Alamofire.request(url, method: HTTPMethod.get, encoding: JSONEncoding.default, headers: "AppConstant.Authorization : Bearer QToFzyxn0IC1cPrZMjDPeg==").responseJSON {
-//
-//        }
-        
-        _ = try? API.fetch(newReleasedAlbumsUnderCategory: "KrdH2LdyUKS8z2aoxX", territory: territory, offset: offset, limit: 50) { result in
-            switch result {
-            case .error(let error):
-                print(error)
-            // Handle error...
-            case .success(let albums):
-                datas = albums 
+
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: header) .responseJSON { response in
+            switch response.result {
+            case .success(_):
+                if let responseData = response.result.value {
+                    datas = responseData as? [String : AnyObject]
+                }
                 group.leave()
-                // Handle the song track.
+                
+            case .failure(_):
+                print(response.result.value)
             }
         }
+        
         group.wait()
         
         return datas

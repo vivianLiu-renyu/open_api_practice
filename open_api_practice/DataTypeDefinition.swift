@@ -100,18 +100,21 @@ func setSongTrackInfo(as info: KKTrackInfo) -> SongTrackData {
     return songTrackData
 }
 
-func getNewAlbums(territory: KKTerritory, offset: Int) -> KKNewReleasedAlbumsCategory {
-    let newAlbumsList = DataAPI().getNewAlbums(territory: territory, offset: offset)
+func getNewAlbums(territory: KKTerritory, offset: Int, limit: Int) -> [String: AnyObject] {
+    let newAlbumsList = DataAPI().getNewAlbums(territory: territory, offset: offset, limit: limit)
     
     return newAlbumsList
 }
 
-func setAlbumsInfo(as info: KKAlbumInfo) -> AlbumData {
+func setAlbumsInfo(as info: [String: AnyObject]) -> AlbumData {
     let albumData = AlbumData()
     
-    albumData.albumID = info.ID
-    albumData.albumName = info.name
-    albumData.albumImageUrl = ((info.images[2].url)?.absoluteString)!
+    albumData.albumID = info["id"] as? String ?? ""
+    albumData.albumName = info["name"] as? String ?? ""
+    
+    let images = info["images"] as? Array ?? []
+    let image = images[2] as? [String:AnyObject] ?? ["" : "" as AnyObject]
+    albumData.albumImageUrl = image["url"] as? String ?? ""
     
     return albumData
 }

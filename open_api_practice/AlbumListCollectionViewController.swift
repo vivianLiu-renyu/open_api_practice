@@ -11,7 +11,7 @@ class AlbumListCollectionViewController: UICollectionViewController {
         super.viewDidAppear(animated)
         
         DispatchQueue.global().async {
-            self.newAlbumsList = GetNewAlbumsData.initNewAlbumsData(self.newAlbumsList, offset: self.pageNumber * 50)
+            self.newAlbumsList = GetNewAlbumsData.initNewAlbumsData(self.newAlbumsList, offset: self.pageNumber * 50, limit: 50)
             
             DispatchQueue.main.async {
                 if let albumDat = self.newAlbumsList.albumsArray {
@@ -58,7 +58,6 @@ class AlbumListCollectionViewController: UICollectionViewController {
         if indexPath.row == newAlbumData.count - 1 {
             isWating = true
             pageNumber += 1
-            print("Page Number: ",pageNumber)
             doPaging()
         }
     }
@@ -67,7 +66,7 @@ class AlbumListCollectionViewController: UICollectionViewController {
         var nextNewAlbumsList: AlbumsAPIData = AlbumsAPIData()
         
         DispatchQueue.global().async {
-            nextNewAlbumsList = GetNewAlbumsData.initNewAlbumsData(nextNewAlbumsList, offset: self.pageNumber * 50)
+            nextNewAlbumsList = GetNewAlbumsData.initNewAlbumsData(nextNewAlbumsList, offset: self.pageNumber * 50, limit: 50)
             
             DispatchQueue.main.async {
                 if let nextNewAlbumData = nextNewAlbumsList.albumsArray {
