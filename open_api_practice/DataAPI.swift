@@ -51,7 +51,7 @@ class DataAPI: NSObject {
         let url = "https://api.kkbox.com/v1.1/new-release-categories/KrdH2LdyUKS8z2aoxX/albums?limit=\(limit)&offset=\(offset)&territory=TW"
         let group = DispatchGroup()
         let header = [
-            "Authorization": "Bearer gdJWBQhOE+JtZwiZxeCmRg==",
+            "Authorization": "Bearer AGIIEYCJZtglEBoddgra0g==",
             "Accept": "application/json",
             "Content-Type": "application/json"
         ]
