@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		05274C0437665B233AE566ED /* Pods_open_api_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4C1FB9976DF19E8C5FDE15 /* Pods_open_api_practice.framework */; };
 		27B046BF64A25629032BA22A /* Pods_open_api_practiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125220680522546FBD32E9B7 /* Pods_open_api_practiceUITests.framework */; };
+		883628DE2272ADA100C8AB45 /* NewAlbumsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883628DD2272ADA100C8AB45 /* NewAlbumsTest.swift */; };
+		883628E02272ADF100C8AB45 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883628DF2272ADF100C8AB45 /* HomePage.swift */; };
+		883628E22272AE0E00C8AB45 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883628E12272AE0E00C8AB45 /* Page.swift */; };
+		883628E42272B88F00C8AB45 /* NewAlbumsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883628E32272B88F00C8AB45 /* NewAlbumsPage.swift */; };
 		885460E8226038E40023B10E /* AlbumListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885460E7226038E40023B10E /* AlbumListCollectionViewController.swift */; };
 		88F2A801223B633D00C58113 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2A800223B633D00C58113 /* AlbumCollectionViewCell.swift */; };
 		8D2C96DD21FB14B2007DCAEA /* SongTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DC21FB14B2007DCAEA /* SongTrackTableViewCell.swift */; };
@@ -42,6 +46,10 @@
 		125220680522546FBD32E9B7 /* Pods_open_api_practiceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_open_api_practiceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4C1FB9976DF19E8C5FDE15 /* Pods_open_api_practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_open_api_practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4455DBBA4E949C35F5609400 /* Pods-open_api_practiceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-open_api_practiceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-open_api_practiceUITests/Pods-open_api_practiceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		883628DD2272ADA100C8AB45 /* NewAlbumsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlbumsTest.swift; sourceTree = "<group>"; };
+		883628DF2272ADF100C8AB45 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		883628E12272AE0E00C8AB45 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		883628E32272B88F00C8AB45 /* NewAlbumsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlbumsPage.swift; sourceTree = "<group>"; };
 		885460E7226038E40023B10E /* AlbumListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListCollectionViewController.swift; sourceTree = "<group>"; };
 		88F2A800223B633D00C58113 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		8D2C96DC21FB14B2007DCAEA /* SongTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTrackTableViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +180,10 @@
 			isa = PBXGroup;
 			children = (
 				C8B7DE1521DF0C490037240A /* NewHitsPlaylistTest.swift */,
+				883628DD2272ADA100C8AB45 /* NewAlbumsTest.swift */,
+				883628E32272B88F00C8AB45 /* NewAlbumsPage.swift */,
+				883628DF2272ADF100C8AB45 /* HomePage.swift */,
+				883628E12272AE0E00C8AB45 /* Page.swift */,
 				C8B7DE1721DF0C490037240A /* Info.plist */,
 			);
 			path = open_api_practiceUITests;
@@ -360,6 +372,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883628DE2272ADA100C8AB45 /* NewAlbumsTest.swift in Sources */,
+				883628E02272ADF100C8AB45 /* HomePage.swift in Sources */,
+				883628E42272B88F00C8AB45 /* NewAlbumsPage.swift in Sources */,
+				883628E22272AE0E00C8AB45 /* Page.swift in Sources */,
 				C8B7DE1621DF0C490037240A /* NewHitsPlaylistTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
