@@ -9,6 +9,13 @@ class NewAlbumsTest: XCTestCase {
         self.continueAfterFailure = false
     }
     
+    func testCanSwipeLeftNewAlbumsSection() {
+        myApp = TestBuilder(app).launch()
+        
+        myApp.on(view: HomePage.self).swipeLeftToNewAlbum(at: 9)
+             .on(view: HomePage.self).checkNewAlbumsHas(number: 10)
+    }
+    
     func testOpenNewAlbumList() {
         myApp = TestBuilder(app).launch()
         
@@ -29,5 +36,16 @@ class NewAlbumsTest: XCTestCase {
         
         myApp.on(view: HomePage.self).openNewAlbums()
              .on(view: NewAlbumsPage.self).checkLoadMoreToAlbum(number: 600)
+    }
+    
+    func testCanLoadMoreNewAlbum() {
+        myApp = TestBuilder(app).launch()
+        
+        let albumName = myApp
+            .on(view: HomePage.self).openNewAlbums()
+            .on(view: NewAlbumsPage.self).getAlbumName(at: 0)
+        
+        myApp.on(view: NewAlbumsPage.self).scrollToAlbum(at: 50)
+             .on(view: NewAlbumsPage.self).checkAlbumName(at: 50, name: albumName, status: false)
     }
 }

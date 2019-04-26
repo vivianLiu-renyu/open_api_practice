@@ -54,7 +54,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="playlist_name"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="album_name"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
@@ -74,6 +74,9 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new albums section"/>
+                                        </userDefinedRuntimeAttributes>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="熱門歌單" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFp-jF-NZf" userLabel="New Hits Playlist Section">
                                         <rect key="frame" x="8" y="263" width="398" height="24"/>
@@ -172,6 +175,9 @@
                                             </tableViewCell>
                                         </prototypes>
                                         <sections/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new hits playlist section"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="dataSource" destination="TY9-Az-QGB" id="1TV-1H-vW9"/>
                                             <outlet property="delegate" destination="TY9-Az-QGB" id="61E-1g-AY0"/>

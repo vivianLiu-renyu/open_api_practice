@@ -2,6 +2,7 @@ import XCTest
 
 enum ElementStatus: String {
     case exist = "exists == true"
+    case notExist = "exists == false"
     case hittable = "isHittable == true"
 }
 
@@ -12,8 +13,21 @@ class Page {
         self.app = app
     }
     
+    @discardableResult
     func on<T: Page>(view: T.Type) -> T {
         return view.init(app)
+    }
+    
+    func swipeUpScreen() {
+        let window = app.windows.firstMatch
+        window.swipeUp()
+    }
+    
+    func scrollToElement(_ element: XCUIElement) {
+        let window = app.windows.firstMatch
+        while !element.exists || !element.isHittable {
+            window.swipeUp()
+        }
     }
 }
 
@@ -43,4 +57,9 @@ func expect(element: XCUIElement, status: ElementStatus) {
 func tap(element: XCUIElement) {
     expect(element: element, status: .exist)
     element.tap()
+}
+
+func swipeLeft(element: XCUIElement) {
+    expect(element: element, status: .exist)
+    element.swipeLeft()
 }
