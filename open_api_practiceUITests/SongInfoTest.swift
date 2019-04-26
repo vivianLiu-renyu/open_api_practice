@@ -28,15 +28,19 @@ class SongInfoTest: XCTestCase {
     }
     
     func testOpenNewHitsPlaylists() {
-        let playlists = XCUIAPP.tables.cells.matching(NSPredicate(format: "identifier BEGINSWITH %@", "New Hits Playlist Cell"))
-        playlists.element(boundBy: 0).tap()
-        XCTAssert(playlists.navigationBars.otherElements.element(boundBy: 0).label == "International new singles")
+        let playlist = XCUIAPP.tables.cells["New Hits Playlist Cell 0"]
+        let HitPlaylistname = playlist.staticTexts.element(boundBy: 0).label
+        playlist.tap()
+        let NavigationBarsplaylietname = XCUIAPP.navigationBars.otherElements.element(boundBy: 0).label
+        XCTAssert(HitPlaylistname == NavigationBarsplaylietname)
     }
     
     func testSonginformation() {
-        let playlistname = XCUIAPP.tables.cells.matching(NSPredicate(format: "identifier BEGINSWITH %@", "New Hits Playlist Cell"))
-        XCTAssert(playlistname.element(boundBy: 0).staticTexts.matching(identifier: "playlist_name").element(boundBy: 0).label != "" )
-        XCTAssert(playlistname.element(boundBy: 0).staticTexts.matching(identifier: "curator_name").element(boundBy: 0).label != "" )
-        XCTAssert(playlistname.element(boundBy: 0).images.matching(identifier: "playlist_cover").element(boundBy: 0).exists == true )
+        let playlist = XCUIAPP.tables.cells["New Hits Playlist Cell 0"]
+        playlist.tap()
+        let Playlistinfo = XCUIAPP.otherElements.element(boundBy: 0).cells
+        XCTAssert(Playlistinfo.staticTexts.element(boundBy: 0).label != "")
+        XCTAssert(Playlistinfo.staticTexts.element(boundBy: 1).label != "" )
+        XCTAssert(Playlistinfo.images.element(boundBy: 0).exists == true )
     }
 }
