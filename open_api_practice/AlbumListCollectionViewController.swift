@@ -55,10 +55,12 @@ class AlbumListCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == newAlbumData.count - 1 {
+        if indexPath.row == newAlbumData.count - 1 && !isWating {
             isWating = true
             pageNumber += 1
-            doPaging()
+            if pageNumber < 12 {
+                doPaging()
+            }
         }
     }
     

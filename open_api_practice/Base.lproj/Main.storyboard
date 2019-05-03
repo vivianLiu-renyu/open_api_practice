@@ -54,7 +54,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="playlist_name"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="album_name"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
@@ -74,6 +74,9 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new albums section"/>
+                                        </userDefinedRuntimeAttributes>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="熱門歌單" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFp-jF-NZf" userLabel="New Hits Playlist Section">
                                         <rect key="frame" x="8" y="263" width="398" height="24"/>
@@ -82,6 +85,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new hits playlist title"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aKP-9T-spy">
                                         <rect key="frame" x="0.0" y="295" width="414" height="480"/>
@@ -169,6 +175,9 @@
                                             </tableViewCell>
                                         </prototypes>
                                         <sections/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new hits playlist section"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="dataSource" destination="TY9-Az-QGB" id="1TV-1H-vW9"/>
                                             <outlet property="delegate" destination="TY9-Az-QGB" id="61E-1g-AY0"/>
@@ -184,6 +193,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="new albums section title"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="OLc-fI-10n" kind="show" identifier="newAlbumList" id="nIO-WL-dFE"/>
                                         </connections>
@@ -345,6 +357,9 @@
                                                 <constraint firstAttribute="width" constant="140" id="oKX-uR-eOT"/>
                                                 <constraint firstAttribute="height" constant="140" id="qjC-Ly-LxQ"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="album_cover"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="專輯名稱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V8-DB-PPf" userLabel="Album Name">
                                             <rect key="frame" x="30" y="230" width="138" height="60"/>
@@ -357,7 +372,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="playlist_name"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="album_name"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
