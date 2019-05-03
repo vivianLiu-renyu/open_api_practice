@@ -71,6 +71,8 @@ class SongTrackTableViewController: UITableViewController {
         settingsLauncher.showSettings()
     }
     
+    
+    
     func sort(by method: Setting) {
         switch method.name {
         case "Sort By Release Date":

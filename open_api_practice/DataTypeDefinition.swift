@@ -61,6 +61,13 @@ class SongTrackData {
         songCoverURL = ""
         releaseDate = ""
     }
+    
+    init(songName: String, artistName: String, songCoverURL: String, releaseDate: String) {
+        self.songName = songName
+        self.artistName = artistName
+        self.songCoverURL = songCoverURL
+        self.releaseDate = releaseDate
+    }
 }
 
 func getPlaylists(territory: KKTerritory) -> [KKPlaylistInfo] {

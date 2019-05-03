@@ -17,6 +17,8 @@
 		88602CC82273191F00975C4F /* SongInfoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88602CC72273191F00975C4F /* SongInfoTest.swift */; };
 		88F2A801223B633D00C58113 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2A800223B633D00C58113 /* AlbumCollectionViewCell.swift */; };
 		8D1257C822698049000F3B09 /* SongTrackSortingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1257C722698049000F3B09 /* SongTrackSortingTest.swift */; };
+		8D1257E1227BF22E000F3B09 /* SongTrackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DE21FB15AA007DCAEA /* SongTrackTableViewController.swift */; };
+		8D1257E2227BF244000F3B09 /* DataTypeDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C500421F1750C00949394 /* DataTypeDefinition.swift */; };
 		8D2C96DD21FB14B2007DCAEA /* SongTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DC21FB14B2007DCAEA /* SongTrackTableViewCell.swift */; };
 		8D2C96DF21FB15AA007DCAEA /* SongTrackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C96DE21FB15AA007DCAEA /* SongTrackTableViewController.swift */; };
 		8D52C2DD22448CCE00D63D6C /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52C2DC22448CCE00D63D6C /* SettingsLauncher.swift */; };
@@ -414,6 +416,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D1257E1227BF22E000F3B09 /* SongTrackTableViewController.swift in Sources */,
+				8D1257E2227BF244000F3B09 /* DataTypeDefinition.swift in Sources */,
 				8D1257C822698049000F3B09 /* SongTrackSortingTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

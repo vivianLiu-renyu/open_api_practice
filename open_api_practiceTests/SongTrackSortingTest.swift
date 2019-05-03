@@ -9,25 +9,16 @@
 import XCTest
 
 class SongTrackSortingTest: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let songs:[SongTrackData] = [
+        SongTrackData(songName: "Unit", artistName: "940 it's me", songCoverURL: "", releaseDate: "1987-02-14"),
+        SongTrackData(songName: "aAp", artistName: "ㄔㄕㄇ", songCoverURL: "", releaseDate: "1987-02-14"),
+        SongTrackData(songName: "中文", artistName: "Rest", songCoverURL: "", releaseDate: "1987-02-14"),
+        SongTrackData(songName: "ㄎKe", artistName: "", songCoverURL: "", releaseDate: "1987-02-14"),
+        SongTrackData(songName: "Pooooo", artistName: "", songCoverURL: "", releaseDate: "1987-02-14")
+    ]
+    
+    func sortByReleaseDate() {
+        
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }
